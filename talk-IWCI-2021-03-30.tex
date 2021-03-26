@@ -132,9 +132,24 @@ IWCI--2021, Baikalsk, Russia
   \item Knowledge Graph (KG) construction principles;
   \item Services for data storage and access provision;
   \item Strong technological basis of web; % User applications are always comprises of interconnected distributed web-services.
-  \item ...
+  \item General and special user interfaces for data presentation;
+  \item
   \end{itemize}
 \end{frame}
+
+% Knowledge graphs changed the aspects to the knowledge base as being a part of whole totality of knowledge, implying the obeying the global standards and techniques of its acquisition and processing.
+
+\begin{frame}
+  \frametitle{Knowledge Graphs}
+  \begin{itemize}
+  \item Converged notions \emph{data} and \emph{knowledge} as something is \emph{known}
+  \item Contain data, relations, and metadata
+  \item Distinguished \emph{node filling in} and \emph{processing} graph triples, e.g., withing SPARQL queries with UPDATEs
+  \item Allow postpone the formal definition of a schema
+  \item Three types of graph schemata: \emph{semantic} (aimed at generalization), \emph{validating} (e.g. semantics, completeness w.r.t. a set of relations), and \emph{emergent} (infer a set of generalized structures and re-represent the data).
+  \end{itemize}
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Linked Open Data}
@@ -145,23 +160,139 @@ IWCI--2021, Baikalsk, Russia
   The primary aim of the project id to lift geological data accumulated at IEC SB RAS and other institutes into the Semantic Web infrastructure.
   \begin{itemize}
   \item Design a web-based GIS system, representing data from SPARQL endpoints;
-  \item Convert the existing data into RDF adhering LOD,
+  \item Convert the existing data into RDF adhering LOD;
+
+  \item Implement natural language query interface using GeoBase (\copyright~Intel~1988), which is converted into a SPARQL query;
+  \item Bidirectional versioned data transfer between user GIS (QGIS, OSM Mapnik) and the SW storage. % The reason of the usage of OSM Mapmik is the various already implemented data processing service, e.g., GPS traces as raw material for modeling the map.
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{}
-  \centering
-  \includegraphics[width=\linewidth]{microbiome-study.png}
-\end{frame}
+% \begin{frame}
+%   \frametitle{}
+%   \centering
+%   \includegraphics[width=\linewidth]{microbiome-study.png}
+% \end{frame}
 
 \begin{frame}
   \frametitle{Related works: LinkedGeoData project}
+  The project \cite{lgd} was aimed at representing OpenSteetMap (OSM) data as a Knowledge Graph (KG).
   \begin{itemize}
-  \item Converts OpenStreetMap data into RDF adhering LOD;
-  \item
+  \item Resembles the DBPedia project formalizing Wikipedia data but on the OSM;
+  \item Converts SM data into RDF adhering LOD;
+  \item Designed and ontology for object georeferencing (nodes);
+  \item Relation of the object to DBpedia, GeoNames, icon sets;
+  \item Taxonomy of the objects on a various levels (Road \to Way (list of nodes)); % and Fig 3 of the LGD paper.
+  \item Stated the relations between nodes and ways defining complex objects;
+  \item REST and SPARQL (does not work now) for actual data;
+  \item Live updates from OSM changesets.
   \end{itemize}
 
+\end{frame}
+
+% Namespaces
+% lgd: http://linkedgeodata.org/triplify/
+% lgdo: http://linkedgeodata.org/ontology/
+% wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#
+% fao: http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/
+% dbpedia: http://dbpedia.org/resource/
+% rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+% rdfs: http://www.w3.org/2000/01/rdf-schema#
+% owl: http://www.w3.org/2002/07/owl#
+% xsd: http://www.w3.org/2001/XMLSchema#
+% georss: http://www.georss.org/georss/
+
+\begin{frame}
+  \frametitle{Related works: LinkedGeoData project}
+  % Figures of Ontology and
+  % usage examples
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: GeoLink Knowledge graph}
+  GeolLinkk KG \cite{geolink}
+  \begin{itemize}
+  \item includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports;
+  \item implements LOD (4 of 5 stars) and federated SPARQL integration;
+  \item contains 45 millions RDF triples with ontologies and geo-visualization tools;
+  \item describes interlinked \textbf{R2R}, expeditions, \textbf{BCO-DMO}, oceanography, \textbf{IODP}, ocean floor microbiome, \textbf{MBLWHOI}, marine life papers, \textbf{SESAR}, rock samples, \textbf{DataONE}, metadata of external research,  \textbf{AGU-NSF}, projects \and conferences, \textbf{NGDB}, sediment geochemy, \textbf{USAP}, Antarctica ice.
+  \end{itemize}
+  In the project, an update procedure (harvesting) is implemented to ensure the consistence of the KG w.r.t. the geo-base ontology (GBO).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: GeoLink Knowledge graph}
+  % Example image from \cite{geolink}
+  The GeoLink knowledge graph is deployed at \url{http://data.geolink.org}.
+\end{frame}
+
+
+% The reference \cite{iwaniak} contains a good review of KG GIS activities related to spacial semantic data representation,  importing, crossreferencing and entity relation techniques and tools development.
+
+\begin{frame}
+  \frametitle{Related Works: Integrating LOD into GIS}
+  The project \cite{abid} deals with developing a web GIS automatically publishing DBPedia data.
+  \begin{itemize}
+  \item LOD resembles Open Government Data principles
+  \item Modules are
+    \begin{itemize}
+    \item GIS is Google Map API v3
+    \item SPARQL used to query DBPedia
+    \item Viewing DBPedia data with Data Table plug-in of JQuery
+    \end{itemize}
+  \item
+  \item Test application allows user querying celebrities by their home town/city pointed by mous on the Google Map.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: Integrating LOD into GIS}
+  % Figure of GIS and SPARQL query
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Related Works: Publishing Geodata LOD in context dependent pages}
+  The project \cite{iwaniak17} goal is to convert existing GIS data into explicit knowledge, thus, forming a Spatial Data Infrastructure (SDI).
+  \begin{itemize}
+  \item Integrate existing geoportal data into a KB, including dynamic data
+  \item Geoportal data must be LOD, e.g., HTML is enriched with RDFa
+  \item Relation interpreters implemented as Expert systems (``building near forest'')
+  \item Semantic enrichment of raw data to make it more usable/discoverable
+  \item Targeting to GeoSPARQL (sfIntersects, sfOverlaps, sfTouches, sfWithin, sfContains))
+  \item Metadata inference from the data source properties
+  \item Test application is to integrate public services data in Mazowieckie Voivodeship of Poland, queries are realized by a limited set of keywords
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: Publishing Geodata LOD in context dependent pages}
+  % figure 1 of Concept of system architecture
+  % figure 2 HTML example
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Resources to be presented: Active faults of the South of
+    East Siberia}
+   % Screenshot of the system
+\end{frame}
+
+\begin{frame}
+  \frametitle{Resources to be presented: Active faults of the South of
+    East Siberia}
+  The fault data have the following properties:
+  \begin{itemize}
+  \item Faults are the objects having linear projection on the surface, and a depth and a slope in the lithosphere;
+  \item Various geological events are also subjects of presentation.
+  \item Any object accompanied with various valued characteristics having also characteristics, e.g., unit name, measurement precision and related publications.
+  \item Images, tables, expedition trails are a also used as auxiliary materials.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Resources to be presented:  Contamination of  Olkhon Island}
+   % Generate a map from the existing data
 \end{frame}
 
 
@@ -1189,6 +1320,15 @@ mothur:align-check-name-parameter a ngsp:Parameter ;
 \end{minted}
 \end{multicols}
 \end{frame}
+
+\begin{thebibliography}{99}
+\bibitem{b1}
+
+\bibitem{hogan}
+  AIDAN HOGAN, EVA BLOMQVIST, MICHAEL COCHEZ, CLAUDIA D’AMATO, et al Knowledge Graphs.
+  \url{https://arxiv.org/abs/2003.02320v5}
+\end{thebibliography}
+
 
 \end{document}
 
