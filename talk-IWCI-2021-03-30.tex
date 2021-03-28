@@ -6,6 +6,7 @@
 \usepackage{multicol}
 \usepackage{anyfontsize}
 \usepackage{minted}
+\RequirePackage{doi}
 
 \usemintedstyle{tango}
 \newcommand{\ltprgsize}{\fontsize{5}{5}\selectfont}
@@ -356,7 +357,8 @@ For the Knowledge Graphs (KG), the following is of interest.
 \begin{frame}
   \frametitle{Resources to be presented: Active faults of the South of
     East Siberia}
-  The fault data have the following properties:
+  The fault data\footnote{Oksana V. Lunina.  The digital map of the pliocene quaternary crustal faults in the southern east siberia and the adjacent northern Mongolia. Geodynamics \& Tectonophysics. 2016. 7(3):407-434. \doi{10.5800/GT-2016-7-3-0215}
+} have the following properties:
   \begin{itemize}
   \item Faults are the objects having linear projection on the surface, and a depth and a slope in the lithosphere
   \item Various geological events are also subjects of presentation
@@ -395,14 +397,19 @@ For the Knowledge Graphs (KG), the following is of interest.
 
 \begin{frame}
   \frametitle{External links}
+  The presentation URL
   \begin{columns}
-    \begin{column}{0.5\textwidth}\centering
-      % \includegraphics[width=1\linewidth]{qrcode-pdf.eps}
-      The presentation URL
+    \begin{column}{0.3\textwidth}
+      \includegraphics[width=1\linewidth]{talk.pdf}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+      \url{https://raw.githubusercontent.com/eugeneai/paper-2021-iwci/main/talk-IWCI-2021-03-30.pdf}
     \end{column}
   \end{columns}
 \begin{thebibliography}{99}
 
+\bibitem{lunina}
+Oksana V. Lunina.  The digital map of the pliocene quaternary crustal faults in the southern east siberia and the adjacent northern Mongolia. Geodynamics \& Tectonophysics. 2016. 7(3):407-434. \doi{10.5800/GT-2016-7-3-0215}
 \bibitem{hogan}
   Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia D’Amato \emph{et al}. Knowledge Graphs.
   \url{https://arxiv.org/abs/2003.02320v5}
