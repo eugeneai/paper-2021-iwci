@@ -91,6 +91,8 @@
 
 % --------------------------
 
+% \def\cite#1{(#1)}
+
 \begin{document}
 
 \setbeamertemplate{background canvas}[vertical shading][bottom=white,top=white]
@@ -112,70 +114,72 @@ IWCI--2021, Baikalsk, Russia
 
 \begin{frame}
   \frametitle{Problem statement}
-  Integration the collected data so they can be
+  Integration the collected geological data so they can be
   \begin{itemize}
-  \item easily accessed;
-  \item standardized representation;
-  \item integrated with the data sources of the similar structure (access way and data representation paradigm); % e.g. DBPedia.org LOD
-  \item thus, reuse the existing data sources for the domain modeling;
-  \item allow to be processed within Big Data paradigm;
-  \item represented as cartographical work (map) dynamically with/without need of GIS software installation.
+  \item easily accessed
+  \item of a standardized representation
+  \item integrated with the data sources of the similar structure (access way and data representation paradigm) % e.g. DBPedia.org LOD
+  \item thus, reuse the existing data sources for the domain modeling
+  \item processed within Big Data paradigm
+  \item represented as cartographical work (map) dynamically with/without need of GIS software installation
   \end{itemize}
   The requested requirements are fulfilled with the present Semantic Web technologies.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Semantic web technologies}
+\begin{frame}[fragile]
+  \frametitle{Semantic web technologies \& Knowledge graphs}
+  Semantic Web (WEB 3.0) is characterized with
   \begin{itemize}
-  \item Strong technological basis of web % User applications are always comprises of interconnected distributed web-services.
+  \item Technological basis, oriented to the web % User applications are always comprises of interconnected distributed web-services.
   \item Standardized data formats, storage, and processing
   \item Open principles of data publishing
-  \item Knowledge Graph (KG) construction techniques
+  % \item Knowledge Graph (KG) construction techniques
   \item Services for data storage and access provision
-  \item Generalized and special user interfaces for data presentation
+  \item Generalized and special user interfaces are used for data presentation\vspace{1em}
   \end{itemize}
-\end{frame}
+%\end{frame}
 
 % Knowledge graphs changed the aspects to the knowledge base as being a part of whole totality of knowledge, implying the obeying the global standards and techniques of its acquisition and processing.
 
-\begin{frame}
-  \frametitle{Knowledge Graphs}
-  \begin{itemize}
-  \item Converged notions \emph{data} and \emph{knowledge} as something is \emph{known}
+%\begin{frame}
+%  \frametitle{Knowledge Graphs}
+For the Knowledge Graphs (KG), the following is of interest.
+ \begin{itemize}
+  \item Converged notions \textbf{data} and \textbf{knowledge} as something is \textbf{known}
   \item Contain data, relations, and metadata (vocabularies)
-  \item Distinguished \emph{node filling in} and \emph{processing} graph triples, \emph{e.g.}, withing SPARQL queries with UPDATEs
-  \item Allow postpone the formal definition of a schema
-  \item Three types of graph schemata: \emph{semantic} (aimed at generalization), \emph{validating} (\emph{e.g.} semantics, \emph{completeness} w.r.t. sets of relations), and \emph{emergent} (infer a set of generalized structures and re-represent the KB).
+  \item Distinguished \textbf{node filling in} and \textbf{processing} graph triples, \emph{e.g.}, withing SPARQL queries with UPDATEs
+  \item Allow \textbf{postpone} the formal definition of a schema
+  \item Three types of graph schemata: \textbf{semantic} (aimed at generalization), \textbf{validating} (\textbf{e.g.} semantics, \textbf{completeness} w.r.t. sets of relations), and \textbf{emergent} (infer a set of generalized structures and re-represent the KG).
   \end{itemize}
 \end{frame}
 
 
+\def\textbfr#1{\textbf{{\color{red}#1*}}}
+
 \begin{frame}
   \frametitle{Linked Open Data (LOD) star evaluation}
+  Data are available in
   \begin{itemize}
-  \item \textbf{1*} data is \textbf{openly available} in any format.
-  \item \textbf{2*} data is available in a structure format, such as Microsoft Excel file format (.xls).
-  \item \textbf{3*} data is available in a non-proprietary structured format, such as Comma-separated values (.csv).
-  \item \textbf{4*} data follows W3C standards, like using RDF and employing URIs.
-  \item[5*] \textbf{5*} all of the other, plus links to other Linked Open Data sources.
+  \item[\textbfr{1}] any format \textbf{openly}
+  \item[\textbfr{2}] a \textbf{structured format}, such as Microsoft Excel file format (.xls)
+  \item[\textbfr{3}] a \textbf{non-proprietary structured format}, such as .csv
+  \item[\textbfr{4}] \textbf{W3C standards}, like using RDF and employing URIs
+  \item[\textbfr{5}] a hypercontent form \textbf{having links to other Linked Open Data sources}
   \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Linked Open Data (LOD) star evaluation}
-  \centering
-  \includegraphics[width=\linewidth]{5-star-lod.png}
+  \begin{flushright}
+   \includegraphics[width=0.7\linewidth]{5-star-lod.png}
+  \end{flushright}
 \end{frame}
 
 \begin{frame}
   \frametitle{The Aim and the plan}
-  The primary aim of the project id to lift geological data accumulated at IEC SB RAS and other institutes into the Semantic Web infrastructure.
+  The \textbf{aim of the project} is to represent geological data accumulated at IEC SB RAS and other institutes into the Semantic Web infrastructure.
   \begin{itemize}
-  \item Design a web-based GIS system, representing data from SPARQL endpoints;
-  \item Convert the existing data into RDF adhering LOD;
-  \item Implement natural language query interface using GeoBase (\copyright~Intel~1988), which is converted into a SPARQL query;
+  \item Design a web-based GIS system, representing data from SPARQL endpoints
+  \item Convert the existing data into RDF adhering LOD
+  \item Implement natural language query interface using GeoBase (\copyright~Borland) with a conversion into a SPARQL query
+  \item Bidirectional versioned data transfer between user GIS (QGIS, OSM Mapnik) and the SW storage % The reason of the usage of OSM Mapmik is the various already implemented data processing service, e.g., GPS traces as raw material for modeling the map.
   \item Implement various analytical functionality for domain problem solving
-  \item Bidirectional versioned data transfer between user GIS (QGIS, OSM Mapnik) and the SW storage. % The reason of the usage of OSM Mapmik is the various already implemented data processing service, e.g., GPS traces as raw material for modeling the map.
   \end{itemize}
 \end{frame}
 
@@ -226,7 +230,7 @@ IWCI--2021, Baikalsk, Russia
   \item includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports;
   \item implements LOD (4 of 5 stars) and federated SPARQL integration;
   \item contains 45 millions RDF triples with ontologies and geo-visualization tools;
-  \item describes interlinked \textbf{R2R}, expeditions, \textbf{BCO-DMO}, oceanography, \textbf{IODP}, ocean floor microbiome, \textbf{MBLWHOI}, marine life papers, \textbf{SESAR}, rock samples, \textbf{DataONE}, metadata of external research,  \textbf{AGU-NSF}, projects \and conferences, \textbf{NGDB}, sediment geochemy, \textbf{USAP}, Antarctica ice.
+  % \item describes interlinked \textbf{R2R}, expeditions, \textbf{BCO-DMO}, oceanography, \textbf{IODP}, ocean floor microbiome, \textbf{MBLWHOI}, marine life papers, \textbf{SESAR}, rock samples, \textbf{DataONE}, metadata of external research,  \textbf{AGU-NSF}, projects \and conferences, \textbf{NGDB}, sediment geochemy, \textbf{USAP}, Antarctica ice.
   \end{itemize}
   In the project, an update procedure (harvesting) is implemented to ensure the consistence of the KG w.r.t. the geo-base ontology (GBO).
 \end{frame}
@@ -306,153 +310,15 @@ IWCI--2021, Baikalsk, Russia
    % Generate a map from the existing data
 \end{frame}
 
-
-
-
-\begin{frame}[fragile]
-  \frametitle{PSM: Scenario of a Class synthesis}
-
-%\begin{multicols}{2}
-  \begin{columns}
-    \begin{column}{0.6\textwidth}
-\begin{minted}[fontsize=\tiny]{logtalk}
-:- object(direct(_Package,_LocalProf,_CodeProf)).    % Transformation driver object
-:- public([tr/4,tr/3]).                              % Public interface of a class synthesis scenario
-% . . . . . . . . . .
-tr(class, Class, ClassID):- ::package(Package),      % Synthesize a class
-    query(Package)::class(Name, ClassID),            % Query package structure in XMI
-    create_object(Class,      % . . . . .            % Create a <<Class>> object
-    create_object(Attributes, % . . . . .            % Create <<Attributes>> object
-    create_object(Methods,    % . . . . .            % ...<<Methods>>.
-    Class::name(Name),                               % Name the class.
-    % Generate attributes of the class,
-    % organizing them in a local database.
-    % ...methods...
-    Class::attributes(Attributes),                   % Set the attributes for class.
-    Class::methods(Methods).                         % ...methods.
-
-tr(attribute, Attribute, ClassID, AttributeID):-     % Attribute transformations
-    ::package(Package),
-    query(Package)::attribute(Name,ClassID,AttrID),
-    create_object(Attribute,  % . . . . .
-    Attribute::name(Name).                           % Name the attribute.
-
-tr(method, Method, ClassID, MethodID):-              % Transformation of methods
-    ::package(Package),
-    query(Package)::method(Name,ClassID,MethodID),
-    create_object(Method,     % . . . . .
-    Method::name(Name).                              % Name of the method
-:- end_object.
-\end{minted}
-    \end{column}
-    \begin{column}{0.4\linewidth}
-      \includegraphics[width=1\linewidth]{scenario.pdf}
-    \end{column}
-  \end{columns}
-  % \end{multicols}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Implementation of \texttt{Query} object}
-\begin{minted}[fontsize=\footnotesize{}]{logtalk}
-:- object(query(_XMI)).
-:- protected(xmi/1).
-:- public([class/2, attribute/3, method/3]).
-xmi(XMI) :- parameter(1, XMI).
-class(Name, ID):-                            % Recognition of Class in RDF
-    ::xmi(XMI),
-    XMI::rdf(ID,rdf:type,uml:'Class'),
-    XMI::rdf(ID,rdfs:label, literal(Name)).
-attribute(Name, ClassID, ID):-               % ...attribute...
-    ::xmi(XMI),
-    XMI::rdf(ClassID, xmi:ownedAttribute, ID),
-    XMI::rdf(ID, rdfs:label, literal(Name)).
-method(Name, ClassID, ID):-                  % ...method...
-    ::xmi(XMI),
-    XMI::rdf(ClassID, xmi:ownedOperation, ID),
-    XMI::rdf(ID, rdfs:label, literal(Name)).
-% . . . . . . . . . . .
-:- end_object.
-\end{minted}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Code Block (idea is taken from \texttt{llvmlite}${}^*$)}
-  \begin{columns}
-    \begin{column}{0.6\textwidth}
-      \flushleft
-\begin{minted}[fontsize=\footnotesize{}]{logtalk}
-:- object(code_block, specializes(root)).
-% Public interface of the object
-:- public([append/1, prepend/1, clear/0,
-   render/1, render_to/1, remove/1,
-   item/1, items/1]).
-% Code block items
-:- dynamic([item_/1]).
-:- private([item_/1]).
-% Methods specialized during inheritance
-:- protected([renderitem/2, render_to/2]).
-% . . . . . . . . . . . .
-% Delegate rendering to object itself
-renderitem(Object, String):-
-    current_object(Object), !,
-    Object::render(String).
-% Convert a literal to its string
-% representation
-renderitem(literal(Item), String):-!,
-    atom_string(Item, String).
-% Just print the item (debugging).
-renderitem(Item, String):-
-    root::iswritef(String, '%q', [Item]).
-:- end_object.
-\end{minted}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-      \includegraphics[width=1\linewidth]{code_block.pdf}
-  ${}^*$) \url{https://github.com/numba/llvmlite}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-
-% TODO: Show results.
-
 \begin{frame}
-  \frametitle{Discussion (MDA application)}
-  Interesting positive impressions obtained:
-  \begin{itemize}
-  \item Logtalk and RDF are flexible, sufficiently universal and convenient implementation infrastructures for MDA;
-  \item The best implemenation means is Prolog predicate wrapping and Logtalk object encapsulation of rules;
-  \item Not all Logtalk properties are investigated: there might be more sophisticated programming techniques developed, \emph{e.g.}, on the base of message watchers.
-  \end{itemize}
-  Technical problems making the approach somewhat problematic:
-  \begin{itemize}
-  \item Very simple tasks take too much efforts, \emph{e.g.}, text processing: convert an identifier into the CamelCase;
-  \item It takes too long to surf Internet in order to find a vocabulary for a domain, but it is more productive than development new one and classes;
-  \item Prolog is not a popular language in MDA, neither Logtalk.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Future activities}
-  The future activities supposed to be as follows:
-  \begin{enumerate}
-  \item Having dataflow models of MiSeq SOP and other techniques, device an intelligent subsystem, which will construct computational procedures for a predefined set of data processing tasks (\emph{AI's problem solving}).
-  \item Integrate dataflow and data storage with Galaxy.
-    \begin{itemize}
-       \item Realize adapters of data/metadata storage and retrieving, as well as the storage.
-       \item Create a more sophisticated source code parser or PIM model of computation so we will able to infer metadata for the output on the metadata of input (partially done in November).
-         % \item Adapt our ``pattern-directed'' approach of semantically marked up document authoring to present input and output to the scientific communities.
-       \item Adapt our document authoring tools to Galaxy allowing LOD representation of results.
-  \end{itemize}
-  \item Implement integration to biological/gene databases.
-  \item Write a handbook on Logtalk programming strategies with its author Paulo Mora.
-  \end{enumerate}
+  \frametitle{System architecture}
+  \centering
+  \includegraphics[width=0.8\linewidth]{architecture.pdf}
 \end{frame}
 
 \begin{frame}
   \frametitle{Conclusion}
-  The following results have been obtained as for today:
+  [[[]]]The following results have been obtained as for today:
   \begin{itemize}
   \item Biologists' activities are mastered, investigated and regular patterns are described.
   \item A technique for interpretation of Mothur interfaces has been developed, implemented, refined and extended.
@@ -463,6 +329,28 @@ renderitem(Item, String):-
   The source codes are available at \url{https://github.com/isu-enterprise/icc.xmitransform}, \url{https://github.com/eugeneai/icc.mothurpim}.
 
   This research is supported by Irkutsk scientific center of SB RAS, project No 4.2;
+\end{frame}
+
+\begin{frame}
+  \frametitle{External links}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}\centering
+      % \includegraphics[width=1\linewidth]{qrcode-pdf.eps}
+      The presentation URL
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+  \Large Thanks for Your interest in our project!
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+  \Large Auxiliary materials
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -482,33 +370,26 @@ renderitem(Item, String):-
   Galaxy (\url{https://usegalaxy.org/}),\\
   R (\url{https://www.r-project.org/}), \\
   Dust.js (\url{https://akdubya.github.io/dustjs/})
+\end{frame}\begin{frame}
+  \frametitle{Technologies used (open source)}
+  Python-3.x.x (\url{http://python.org}),\\
+  ZCA (\url{https://muthukadan.net/docs/zca.html}),\\
+  SWIG (\url{http://swig.org/}),\\
+  SWI-Prolog (\url{https://www.swi-prolog.org/}),\\
+  Logtalk (\url{https://logtalk.org/}),\\
+  ClioPatria (\url{https://cliopatria.swi-prolog.org/home}),\\
+  Pengines (\url{https://pengines.swi-prolog.org/docs/index.html}),\\
+  LOV (\url{https://lov.linkeddata.es/dataset/lov/}),\\
+  Elastic Search (\url{https://www.elastic.co/}),\\
+  Kyotocabinet (\url{https://fallabs.com/kyotocabinet/}),\\
+  DBPedia (\url{https://wiki.dbpedia.org/}),\\
+  Mothur (\url{https://mothur.org/}),\\
+  Galaxy (\url{https://usegalaxy.org/}),\\
+  R (\url{https://www.r-project.org/}), \\
+  Dust.js (\url{https://akdubya.github.io/dustjs/})
 \end{frame}
 
-\begin{frame}
-  \frametitle{External links}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}\centering
-      \includegraphics[width=1\linewidth]{qrcode-pdf.eps}
-      This presentation
-    \end{column}
-    \begin{column}{0.5\textwidth}\centering
-      \includegraphics[width=0.95\linewidth]{qr-illumina.png}
-      Illumina movie on NGS
-    \end{column}
-  \end{columns}
-\end{frame}
 
-\begin{frame}
-  \begin{center}
-  \Large Thanks for Your interest in our project!
-\end{center}
-\end{frame}
-
-\begin{frame}
-  \begin{center}
-  \Large Auxiliary materials
-\end{center}
-\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Semantic Web technologies in representation of models
@@ -566,12 +447,6 @@ renderitem(Item, String):-
   \end{itemize}
 
   The \textbf{aim of this research} is to develop technologies, software and services allowing construction of digital archives supporting document data inclusion and inference from existing documents.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Structure of a document}
-  \centering
-  \includegraphics[width=1\linewidth]{document-structural-view.pdf}
 \end{frame}
 
 \begin{frame}
