@@ -153,6 +153,12 @@ For the Knowledge Graphs (KG), the following is of interest.
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Knowledge graph: Validating semantic example}
+  \centering
+  \includegraphics[width=0.9\linewidth]{verify-semantics.png}
+\end{frame}
+
 
 \def\textbfr#1{\textbf{{\color{red}#1*}}}
 
@@ -206,31 +212,31 @@ For the Knowledge Graphs (KG), the following is of interest.
   \end{itemize}
 \end{frame}
 
-% Namespaces
-% lgd: http://linkedgeodata.org/triplify/
-% lgdo: http://linkedgeodata.org/ontology/
-% wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#
-% fao: http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/
-% dbpedia: http://dbpedia.org/resource/
-% rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-% rdfs: http://www.w3.org/2000/01/rdf-schema#
-% owl: http://www.w3.org/2002/07/owl#
-% xsd: http://www.w3.org/2001/XMLSchema#
-% georss: http://www.georss.org/georss/
 
 \begin{frame}
   \frametitle{Related works: LinkedGeoData project}
   % Figures of Ontology and
   % usage examples
+  \centering
+  \includegraphics[width=\linewidth]{lgd-sys.png}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Related works: LinkedGeoData project}
+  % Figures of Ontology and
+  % usage examples
+  \centering
+  \includegraphics[width=\linewidth]{lgd-screen.png}
+\end{frame}
+
 
 \begin{frame}[fragile]
   \frametitle{Related Works: GeoLink Knowledge graph}
   GeolLink KG \cite{geolink}
   \begin{itemize}
-  \item Includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports;
-  \item Implements LOD (4 of 5 stars) and federated SPARQL integration;
-  \item Contains 45 millions RDF triples with ontologies and geo-visualization tools;
+  \item Includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports
+  \item Implements LOD (4 of 5 stars) and federated SPARQL integration
+  \item Contains 45 millions RDF triples with ontologies and geo-visualization tools
   \item Describes interlinked \textbf{R2R}, expeditions, \textbf{BCO-DMO}, oceanography, \textbf{IODP}, ocean floor microbiome, \textbf{MBLWHOI}, marine life papers, \textbf{SESAR}, rock samples, \textbf{DataONE}, metadata of external research,  \textbf{AGU-NSF}, projects \& conferences, \textbf{NGDB}, sediment geochemy, \textbf{USAP}, Antarctica ice.
   \end{itemize}
   In the project, an update procedure (harvesting) is implemented to ensure the consistence of the KG w.r.t. the geo-base ontology (GBO).
@@ -239,6 +245,9 @@ For the Knowledge Graphs (KG), the following is of interest.
 \begin{frame}
   \frametitle{Related Works: GeoLink Knowledge graph}
   % Example image from \cite{geolink}
+  \begin{center}
+  \includegraphics[width=\linewidth]{geolink-onto.png}
+  \end{center}
   The GeoLink knowledge graph is deployed at \url{http://data.geolink.org}.
 \end{frame}
 
@@ -263,8 +272,37 @@ For the Knowledge Graphs (KG), the following is of interest.
 \begin{frame}
   \frametitle{Related Works: Integrating LOD into GIS}
   % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=\linewidth]{integrating-lod-gis-arch.png}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Related Works: Integrating LOD into GIS}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=\linewidth]{integrating-lod-gis-query.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: ????}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=0.8\linewidth]{integrating-tech.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: ????}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=0.7\linewidth]{integrating-og.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Related Works: ????}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=0.7\linewidth]{deducing-rels.png}
+\end{frame}
 
 \begin{frame}
   \frametitle{Related Works: Publishing Geodata LOD in context dependent pages}
@@ -286,11 +324,33 @@ For the Knowledge Graphs (KG), the following is of interest.
   % figure 2 HTML example
 \end{frame}
 
+\begin{frame}
+  \frametitle{Existing resources}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=\linewidth]{japan.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Existing resources}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=\linewidth]{italy-1.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Existing resources}
+  % Figure of GIS and SPARQL query
+  \centering
+  \includegraphics[width=\linewidth]{italy-2.png}
+\end{frame}
 
 \begin{frame}
   \frametitle{Resources to be presented: Active faults of the South of
     East Siberia}
-   % Screenshot of the system
+  % Screenshot of the system
+  \centering
+   \includegraphics[width=0.9\linewidth]{activetectonics.png}
 \end{frame}
 
 \begin{frame}
@@ -306,8 +366,10 @@ For the Knowledge Graphs (KG), the following is of interest.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Resources to be presented:  Contamination of  Olkhon Island}
+  \frametitle{Resources to be presented:  the Olkhon Island}
    % Generate a map from the existing data
+  \centering
+   \includegraphics[width=\linewidth]{olkhon-gis.png}
 \end{frame}
 
 \begin{frame}
@@ -339,6 +401,12 @@ For the Knowledge Graphs (KG), the following is of interest.
       The presentation URL
     \end{column}
   \end{columns}
+\begin{thebibliography}{99}
+
+\bibitem{hogan}
+  Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia D’Amato \emph{et al}. Knowledge Graphs.
+  \url{https://arxiv.org/abs/2003.02320v5}
+\end{thebibliography}
 \end{frame}
 
 \begin{frame}
@@ -355,56 +423,41 @@ For the Knowledge Graphs (KG), the following is of interest.
 
 \begin{frame}
   \frametitle{Technologies used (open source)}
-  Python-3.x.x (\url{http://python.org}),\\
-  ZCA (\url{https://muthukadan.net/docs/zca.html}),\\
-  SWIG (\url{http://swig.org/}),\\
-  SWI-Prolog (\url{https://www.swi-prolog.org/}),\\
-  Logtalk (\url{https://logtalk.org/}),\\
-  ClioPatria (\url{https://cliopatria.swi-prolog.org/home}),\\
-  Pengines (\url{https://pengines.swi-prolog.org/docs/index.html}),\\
-  LOV (\url{https://lov.linkeddata.es/dataset/lov/}),\\
-  Elastic Search (\url{https://www.elastic.co/}),\\
-  Kyotocabinet (\url{https://fallabs.com/kyotocabinet/}),\\
-  DBPedia (\url{https://wiki.dbpedia.org/}),\\
-  Mothur (\url{https://mothur.org/}),\\
-  Galaxy (\url{https://usegalaxy.org/}),\\
-  R (\url{https://www.r-project.org/}), \\
-  Dust.js (\url{https://akdubya.github.io/dustjs/})
-\end{frame}\begin{frame}
-  \frametitle{Technologies used (open source)}
-  Python-3.x.x (\url{http://python.org}),\\
-  ZCA (\url{https://muthukadan.net/docs/zca.html}),\\
-  SWIG (\url{http://swig.org/}),\\
-  SWI-Prolog (\url{https://www.swi-prolog.org/}),\\
-  Logtalk (\url{https://logtalk.org/}),\\
-  ClioPatria (\url{https://cliopatria.swi-prolog.org/home}),\\
-  Pengines (\url{https://pengines.swi-prolog.org/docs/index.html}),\\
-  LOV (\url{https://lov.linkeddata.es/dataset/lov/}),\\
-  Elastic Search (\url{https://www.elastic.co/}),\\
-  Kyotocabinet (\url{https://fallabs.com/kyotocabinet/}),\\
-  DBPedia (\url{https://wiki.dbpedia.org/}),\\
-  Mothur (\url{https://mothur.org/}),\\
-  Galaxy (\url{https://usegalaxy.org/}),\\
-  R (\url{https://www.r-project.org/}), \\
-  Dust.js (\url{https://akdubya.github.io/dustjs/})
+  Python-3.x.x (\url{http://python.org})\\
+  ZCA (\url{https://muthukadan.net/docs/zca.html})\\
+  SWIG (\url{http://swig.org/})\\
+  SWI-Prolog (\url{https://www.swi-prolog.org/})\\
+  Logtalk (\url{https://logtalk.org/})\\
+  ClioPatria (\url{https://cliopatria.swi-prolog.org/home})\\
+  Pengines (\url{https://pengines.swi-prolog.org/docs/index.html})\\
+  LOV (\url{https://lov.linkeddata.es/dataset/lov/})\\
+  Elastic Search (\url{https://www.elastic.co/})\\
+  Kyotocabinet (\url{https://fallabs.com/kyotocabinet/})\\
+  DBPedia (\url{https://wiki.dbpedia.org/})\\
+  % Mothur (\url{https://mothur.org/}),\\
+  % Galaxy (\url{https://usegalaxy.org/}),\\
+  % R (\url{https://www.r-project.org/}), \\
+  Dust.js (\url{https://akdubya.github.io/dustjs/})\\
+  QGIS (\url{https://qgis.org/ru/site/})\\
+  TabbyDOC (\url{http://td.icc.ru/})\\
+  GeoBase (\url{https://github.com/eugeneai/geobase})\\
+  Authoring Tool (\url{https://github.com/isu-enterprise/isu.college})
 \end{frame}
 
-
-
-\begin{frame}[fragile]
-  \frametitle{Semantic Web technologies in representation of models
-    during transformation}
-  \begin{itemize}
-  \item Assimilates experience of domain basic researches trending to standardization;
-  \item Regular set of triples denote a graph (T-Box, A-Box);
-  \item Standard vocabularies are formally described (\verb|rdfs:domain|, \verb|rdfs:range|);
-  \item Supported with most programming systems (libraries, inference engines, SPARQL);
-  \item RDF has a way of global element identification, \emph{i.e.} we can refer the same object from different software systems;
-  \item SWI-Prolog supports direct queries to a graph, as well as interpreting some predicates (\verb|rdfs:label|, \verb|dc:title|), wraps sparse RDF structure into a predicate arguments; ontological server ClioPatria;
-  \item There is simple way of data security implementation (\verb|rdfs:seeAlso|);
-  \item By means of Semantic Web \& LOD we are able to organize data transfer between heterogeneous information systems.
-  \end{itemize}
-\end{frame}
+% \begin{frame}[fragile]
+%   \frametitle{Semantic Web technologies in representation of models
+%     during transformation}
+%   \begin{itemize}
+%   \item Assimilates experience of domain basic researches trending to standardization;
+%   \item Regular set of triples denote a graph (T-Box, A-Box);
+%   \item Standard vocabularies are formally described (\verb|rdfs:domain|, \verb|rdfs:range|);
+%   \item Supported with most programming systems (libraries, inference engines, SPARQL);
+%   \item RDF has a way of global element identification, \emph{i.e.} we can refer the same object from different software systems;
+%   \item SWI-Prolog supports direct queries to a graph, as well as interpreting some predicates (\verb|rdfs:label|, \verb|dc:title|), wraps sparse RDF structure into a predicate arguments; ontological server ClioPatria;
+%   \item There is simple way of data security implementation (\verb|rdfs:seeAlso|);
+%   \item By means of Semantic Web \& LOD we are able to organize data transfer between heterogeneous information systems.
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}
   \frametitle{Used ontologies}
@@ -412,21 +465,41 @@ For the Knowledge Graphs (KG), the following is of interest.
   Standardized ontologies
 
   \begin{itemize}
-  \item Friend-of-a-friend (\textbf{foaf}) for agent information: individuals, legal entities, program agents.
-  \item Provenance (\textbf{prov}) for making references between documents.
-  \item Dublin Core (\textbf{dc}) for published resource metadata mark up.
-  \item DBPedia resource (\textbf{dbr}) to refer external classes and instance objects.
-  \item Schema.org (\textbf{schema}) for Google, Yandex, Yahoo, \emph{etc}. searchable objects, structural elements.
-  \item The Bibliographic Ontology (\textbf{bibo}) used for literature reference mark up.
-  \item Open annotation (\texttt{oa}) as an ``bookmark'' ontology.
+  \item Friend-of-a-friend (\textbf{foaf}) for agent information: individuals, legal entities, program agents
+  \item Provenance (\textbf{prov}) for making references between documents
+  \item Dublin Core (\textbf{dc}) for published resource metadata mark up
+  \item DBPedia resource (\textbf{dbr}) to refer external classes and instance objects
+  \item Schema.org (\textbf{schema}) for Google, Yandex, Yahoo, \emph{etc}. searchable objects, structural elements
+  \item The Bibliographic Ontology (\textbf{bibo}) used for literature reference
+  \item Open annotation (\textbf{oa}) as an ``bookmark'' ontology
+% Namespaces
+  \item LinkedGeoData A-Box (\textbf{lgd}) % http://linkedgeodata.org/triplify/
+  \item LinkedGeoData T-Box (\textbf{lgdo}) % http://linkedgeodata.org/ontology/
+  \item Coordinate system (\textbf{wgs84}) % http://www.w3.org/2003/01/geo/wgs84_pos#
+% fao: http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/
+% dbpedia: http://dbpedia.org/resource/
+% rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+% rdfs: http://www.w3.org/2000/01/rdf-schema#
+  \item the Ontology WEB Language (\textbf{owl}) % http://www.w3.org/2002/07/owl#
+  \item XML Schema (\textbf{xsd}) % http://www.w3.org/2001/XMLSchema#
+% georss: http://www.georss.org/georss/
   \end{itemize}
 
-  Non-standard ontologies
+  % Non-standard ontologies
 
-  \begin{itemize}
-  \item Ontology \texttt{nssp} for Mothur source code processing results.
-  \item Ontology \texttt{uml} for XMI representation.
-  \end{itemize}
+  % \begin{itemize}
+  % \item Ontology \texttt{nssp} for Mothur source code processing results.
+  % \item Ontology \texttt{uml} for XMI representation.
+  % \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Open Annotation (oa)}
+\begin{adjustwidth}{-3em}{-3em}
+  \centering
+  \includegraphics[width=1\linewidth]{Open-Annotation_CB_Bookmarking_and_Semantically_Tagging_A_webpage_spec20130128.png}
+\end{adjustwidth}
+
 \end{frame}
 
 \begin{frame}
@@ -449,106 +522,88 @@ For the Knowledge Graphs (KG), the following is of interest.
   The \textbf{aim of this research} is to develop technologies, software and services allowing construction of digital archives supporting document data inclusion and inference from existing documents.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Open Annotation (oa)}
-\begin{adjustwidth}{-3em}{-3em}
-  \centering
-  \includegraphics[width=1\linewidth]{Open-Annotation_CB_Bookmarking_and_Semantically_Tagging_A_webpage_spec20130128.png}
-\end{adjustwidth}
+% \begin{frame}[fragile]
+%   \frametitle{Representation}
+%   % \begin{block}{}
+%   %   \textbf{Целью} исследования является создание методики разработки процедур трансформации (PD\footnote{Platform [description] model.}) в виде ОО-модулей.
+%   % \end{block}
+%   % \begin{columns}
+%   %   \begin{column}{0.5\linewidth}
+%   %     % \includegraphics[width=1\linewidth]{pics/scenario-ru-wo-mothur.pdf}
+%   %   \end{column}
+%   %   \begin{column}{0.6\linewidth}
+%   %     Задачи исследования:
+%   %     \begin{itemize}
+%   %     \item Изучить синтаксические структуры Logtalk в аспекте структурирования знаний;
+%   %     \item Предложить методику представления трансформации в виде ОО-модулей;
+%   %     \item Реализовать библиотеку объектов и классов для МДА;
+%   %     \item Тестирование библиотеки на примере.
+%   %     \end{itemize}
+%   %   \end{column}
+%   % \end{columns}
 
-\end{frame}
+% \begin{adjustwidth}{-1.5em}{-1.5em}
+% \begin{minted}[escapeinside=||,fontsize=\btprgsize]{xml}
+% <html lang="ru" xmlns=http://www.w3.org/1999/xhtml
+% |\GB{xmlns:taa}|=http://irnok.net/engine/rdfa-manipulation
+% xml:lang="ru" metal:define-macro="page">
+% <head> . . . . </head>
+% <body prefix="rdf: http://www.w3.org/1999/...-ns# foaf: http://xmlns.com/foaf/...
+% imei: imei.html# course: https://irnok.net/college/plan/01..16-...\
+% %D0\%BA_PB-SM.plm.xml.xlsx-....2.3.1.html#"  resource="#post"
+% typeof="schema:CreativeWork sioc:Post prov:Entity">
+% <!-- The application control panel -->
 
-\begin{frame}[fragile,fragile]
-  \frametitle{Representation}
-  % \begin{block}{}
-  %   \textbf{Целью} исследования является создание методики разработки процедур трансформации (PD\footnote{Platform [description] model.}) в виде ОО-модулей.
-  % \end{block}
-  % \begin{columns}
-  %   \begin{column}{0.5\linewidth}
-  %     % \includegraphics[width=1\linewidth]{pics/scenario-ru-wo-mothur.pdf}
-  %   \end{column}
-  %   \begin{column}{0.6\linewidth}
-  %     Задачи исследования:
-  %     \begin{itemize}
-  %     \item Изучить синтаксические структуры Logtalk в аспекте структурирования знаний;
-  %     \item Предложить методику представления трансформации в виде ОО-модулей;
-  %     \item Реализовать библиотеку объектов и классов для МДА;
-  %     \item Тестирование библиотеки на примере.
-  %     \end{itemize}
-  %   \end{column}
-  % \end{columns}
+% <main lang="ru" resource="#annotation" typeof="oa:Annotation" id="main-doc-cnt">
+% <div property="oa:hasTarget" resource="#course-work-prog"></div>
+% <article property="oa:hasBody" typeof="foaf:Document curr:WorkingProgram"
+%          resource="#course-work-program" id="main-document">
+%   <div |\GB{taa:content}|="imei:title-page"></div>
+%   <div |\GB{taa:content}|="imei:neg-UMK"></div>
+%   <section id="TOC" class="break-after"> <h2>Table of Contents</h2>
+%     <div id="tableOfContents"></div>
+%   </section>
+%   <section id="course-description" resource="#description"
+%            property="schema:hasPart" typeof="schema:CreativeWork">
+%     <div property="schema:hasPart" resource="#purpose"
+%          typeof="dc:Text cnt:ContentAsText" >
+%       <div property="cnt:chars" datatype="xsd:string">
+%         <h2 property="dc:title" datatype="xsd:string">
+%            Aims and objectives of the discipline (module)</h2>
+%         <p>The aim of teaching the discipline ...</p>
+%       </div>
+%    </div>
+%   . . . . . . . .
+% \end{minted}
+% \end{adjustwidth}
+% \end{frame}
 
-\begin{adjustwidth}{-1.5em}{-1.5em}
-\begin{minted}[escapeinside=||,fontsize=\btprgsize]{xml}
-<html lang="ru" xmlns=http://www.w3.org/1999/xhtml
-|\GB{xmlns:taa}|=http://irnok.net/engine/rdfa-manipulation
-xml:lang="ru" metal:define-macro="page">
-<head> . . . . </head>
-<body prefix="rdf: http://www.w3.org/1999/...-ns# foaf: http://xmlns.com/foaf/...
-imei: imei.html# course: https://irnok.net/college/plan/01..16-...\
-%D0\%BA_PB-SM.plm.xml.xlsx-....2.3.1.html#"  resource="#post"
-typeof="schema:CreativeWork sioc:Post prov:Entity">
-<!-- The application control panel -->
-
-<main lang="ru" resource="#annotation" typeof="oa:Annotation" id="main-doc-cnt">
-<div property="oa:hasTarget" resource="#course-work-prog"></div>
-<article property="oa:hasBody" typeof="foaf:Document curr:WorkingProgram"
-         resource="#course-work-program" id="main-document">
-  <div |\GB{taa:content}|="imei:title-page"></div>
-  <div |\GB{taa:content}|="imei:neg-UMK"></div>
-  <section id="TOC" class="break-after"> <h2>Table of Contents</h2>
-    <div id="tableOfContents"></div>
-  </section>
-  <section id="course-description" resource="#description"
-           property="schema:hasPart" typeof="schema:CreativeWork">
-    <div property="schema:hasPart" resource="#purpose"
-         typeof="dc:Text cnt:ContentAsText" >
-      <div property="cnt:chars" datatype="xsd:string">
-        <h2 property="dc:title" datatype="xsd:string">
-           Aims and objectives of the discipline (module)</h2>
-        <p>The aim of teaching the discipline ...</p>
-      </div>
-   </div>
-  . . . . . . . .
-\end{minted}
-\end{adjustwidth}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Linked Open Data, LOD}
-  \begin{enumerate}
-  \item Information is published in Internet with open access license;
-  \item It is represented in a machine-readable form, e.g., Excel table instead of a bitmap picture;
-  \item An open format used, e.g., CSV instead of Excel;
-  \item The format is based on W3C recommended standards, allowing RDF and SPARQL reference;
-  \item Published data refer to objects, forming context.
-  \end{enumerate}
-  Thus, applications publish data as relations of objects (entities).
-\end{frame}
+% \begin{frame}
+%   \frametitle{Linked Open Data, LOD}
+%   \begin{enumerate}
+%   \item Information is published in Internet with open access license;
+%   \item It is represented in a machine-readable form, e.g., Excel table instead of a bitmap picture;
+%   \item An open format used, e.g., CSV instead of Excel;
+%   \item The format is based on W3C recommended standards, allowing RDF and SPARQL reference;
+%   \item Published data refer to objects, forming context.
+%   \end{enumerate}
+%   Thus, applications publish data as relations of objects (entities).
+% \end{frame}
 
 \begin{frame}
   \frametitle{Logtalk as transformation definition language}
   We have chosen Logtalk as it
   \begin{itemize}
-  \item inherits widely known Prolog language syntax and runtime;
-  \item implemented as macro package, performance penalties are about 1.5\%;
-  \item has flexible semantics: we can define transformations and constraints within the same syntax;
-  \item implement object-oriented knowledge (rules) structuring, encapsulation and replacement;
-  \item compositional way of transformation implementation;
-  \item powerful engine to post constraints on object-to-object messages (events);
+  \item inherits widely known Prolog language syntax and runtime
+  \item implemented as macro package, performance penalties are about 1.5\%
+  \item has flexible semantics: we can define transformations and constraints within the same syntax
+  \item implement object-oriented knowledge (rules) structuring, encapsulation and replacement
+  \item compositional way of transformation implementation
+  \item powerful engine to post constraints on object-to-object messages (events)
   \item has implementation for many Prolog engines.
   \end{itemize}
   The <<regular>> language allow us to use its libraries not directly related to MDA transformations.
 \end{frame}
-
-
-\begin{thebibliography}{99}
-\bibitem{b1}
-
-\bibitem{hogan}
-  AIDAN HOGAN, EVA BLOMQVIST, MICHAEL COCHEZ, CLAUDIA D’AMATO, et al Knowledge Graphs.
-  \url{https://arxiv.org/abs/2003.02320v5}
-\end{thebibliography}
 
 
 \end{document}
