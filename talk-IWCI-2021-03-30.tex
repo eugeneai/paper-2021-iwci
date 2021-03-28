@@ -174,13 +174,15 @@ For the Knowledge Graphs (KG), the following is of interest.
 \begin{frame}
   \frametitle{The Aim and the plan}
   The \textbf{aim of the project} is to represent geological data accumulated at IEC SB RAS and other institutes into the Semantic Web infrastructure.
-  \begin{itemize}
+
+  The \textbf{main problems} to be solved are
+  \begin{enumerate}
   \item Design a web-based GIS system, representing data from SPARQL endpoints
   \item Convert the existing data into RDF adhering LOD
   \item Implement natural language query interface using GeoBase (\copyright~Borland) with a conversion into a SPARQL query
   \item Bidirectional versioned data transfer between user GIS (QGIS, OSM Mapnik) and the SW storage % The reason of the usage of OSM Mapmik is the various already implemented data processing service, e.g., GPS traces as raw material for modeling the map.
   \item Implement various analytical functionality for domain problem solving
-  \end{itemize}
+  \end{enumerate}
 \end{frame}
 
 % \begin{frame}
@@ -190,19 +192,18 @@ For the Knowledge Graphs (KG), the following is of interest.
 % \end{frame}
 
 \begin{frame}
-  \frametitle{Related works: LinkedGeoData project}
-  The project \cite{lgd} was aimed at representing OpenSteetMap (OSM) data as a Knowledge Graph (KG).
+  \frametitle{Related works: \textbf{LinkedGeoData} project}
+  The project \cite{lgd} was to represent OpenSteetMap (OSM) data as a KG,
   \begin{itemize}
-  \item Resembles the DBPedia project formalizing Wikipedia data but on the OSM;
-  \item Converts SM data into RDF adhering LOD;
-  \item Designed and ontology for object georeferencing (nodes);
-  \item Relation of the object to DBpedia, GeoNames, icon sets;
-  \item Taxonomy of the objects on a various levels (Road \to Way (list of nodes)); % and Fig 3 of the LGD paper.
-  \item Stated the relations between nodes and ways defining complex objects;
-  \item REST and SPARQL (does not work now) for actual data;
-  \item Live updates from OSM changesets.
+  \item Resembles the DBPedia project formalizing Wikipedia data but over the OSM database
+  \item Converts SM data into RDF adhering LOD
+  \item Designed an ontology for object georeferencing (nodes)
+  \item Related the object to DBpedia, GeoNames, icon sets
+  \item Developed a taxonomy of the objects on a various levels (Road~\to~Way (list of nodes)) % and Fig 3 of the LGD paper.
+  \item Stated the relations between nodes and ways defining complex objects
+  \item Implemented REST and SPARQL (does not work now) endpoints for actual data
+  \item Had a live updates services from OSM changesets.
   \end{itemize}
-
 \end{frame}
 
 % Namespaces
@@ -225,12 +226,12 @@ For the Knowledge Graphs (KG), the following is of interest.
 
 \begin{frame}[fragile]
   \frametitle{Related Works: GeoLink Knowledge graph}
-  GeolLinkk KG \cite{geolink}
+  GeolLink KG \cite{geolink}
   \begin{itemize}
-  \item includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports;
-  \item implements LOD (4 of 5 stars) and federated SPARQL integration;
-  \item contains 45 millions RDF triples with ontologies and geo-visualization tools;
-  % \item describes interlinked \textbf{R2R}, expeditions, \textbf{BCO-DMO}, oceanography, \textbf{IODP}, ocean floor microbiome, \textbf{MBLWHOI}, marine life papers, \textbf{SESAR}, rock samples, \textbf{DataONE}, metadata of external research,  \textbf{AGU-NSF}, projects \and conferences, \textbf{NGDB}, sediment geochemy, \textbf{USAP}, Antarctica ice.
+  \item Includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports;
+  \item Implements LOD (4 of 5 stars) and federated SPARQL integration;
+  \item Contains 45 millions RDF triples with ontologies and geo-visualization tools;
+  \item Describes interlinked \textbf{R2R}, expeditions, \textbf{BCO-DMO}, oceanography, \textbf{IODP}, ocean floor microbiome, \textbf{MBLWHOI}, marine life papers, \textbf{SESAR}, rock samples, \textbf{DataONE}, metadata of external research,  \textbf{AGU-NSF}, projects \& conferences, \textbf{NGDB}, sediment geochemy, \textbf{USAP}, Antarctica ice.
   \end{itemize}
   In the project, an update procedure (harvesting) is implemented to ensure the consistence of the KG w.r.t. the geo-base ontology (GBO).
 \end{frame}
@@ -255,8 +256,7 @@ For the Knowledge Graphs (KG), the following is of interest.
     \item SPARQL used to query DBPedia
     \item Viewing DBPedia data with Data Table plug-in of JQuery
     \end{itemize}
-  \item
-  \item Test application allows user querying celebrities by their home town/city pointed by mous on the Google Map.
+  \item Test application allows user querying celebrities by their home town/city pointed by mouse on the Google Map.
   \end{itemize}
 \end{frame}
 
@@ -271,7 +271,7 @@ For the Knowledge Graphs (KG), the following is of interest.
   The project \cite{iwaniak17} goal is to convert existing GIS data into explicit knowledge, thus, forming a Spatial Data Infrastructure (SDI).
   \begin{itemize}
   \item Integrate existing geoportal data into a KB, including dynamic data
-  \item Geoportal data must be LOD, e.g., HTML is enriched with RDFa
+  \item Geoportal data must be LOD, \emph{e.g.}, HTML is enriched with RDFa
   \item Relation interpreters implemented as Expert systems (``building near forest'')
   \item Semantic enrichment of raw data to make it more usable/discoverable
   \item Targeting to GeoSPARQL (sfIntersects, sfOverlaps, sfTouches, sfWithin, sfContains))
@@ -298,9 +298,9 @@ For the Knowledge Graphs (KG), the following is of interest.
     East Siberia}
   The fault data have the following properties:
   \begin{itemize}
-  \item Faults are the objects having linear projection on the surface, and a depth and a slope in the lithosphere;
-  \item Various geological events are also subjects of presentation.
-  \item Any object accompanied with various valued characteristics having also characteristics, e.g., unit name, measurement precision and related publications.
+  \item Faults are the objects having linear projection on the surface, and a depth and a slope in the lithosphere
+  \item Various geological events are also subjects of presentation
+  \item Any object accompanied with various valued characteristics having also characteristics, \emph{e.g.}, unit name, measurement precision and related publications
   \item Images, tables, expedition trails are a also used as auxiliary materials.
   \end{itemize}
 \end{frame}
