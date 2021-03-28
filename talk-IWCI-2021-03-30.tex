@@ -125,15 +125,14 @@ IWCI--2021, Baikalsk, Russia
 \end{frame}
 
 \begin{frame}
-  \frametitle{Semantic web standardized technologies}
+  \frametitle{Semantic web technologies}
   \begin{itemize}
-  \item Data formats ...
-  \item Open principles of data publishing;
-  \item Knowledge Graph (KG) construction principles;
-  \item Services for data storage and access provision;
-  \item Strong technological basis of web; % User applications are always comprises of interconnected distributed web-services.
-  \item General and special user interfaces for data presentation;
-  \item
+  \item Strong technological basis of web % User applications are always comprises of interconnected distributed web-services.
+  \item Standardized data formats, storage, and processing
+  \item Open principles of data publishing
+  \item Knowledge Graph (KG) construction techniques
+  \item Services for data storage and access provision
+  \item Generalized and special user interfaces for data presentation
   \end{itemize}
 \end{frame}
 
@@ -143,16 +142,29 @@ IWCI--2021, Baikalsk, Russia
   \frametitle{Knowledge Graphs}
   \begin{itemize}
   \item Converged notions \emph{data} and \emph{knowledge} as something is \emph{known}
-  \item Contain data, relations, and metadata
-  \item Distinguished \emph{node filling in} and \emph{processing} graph triples, e.g., withing SPARQL queries with UPDATEs
+  \item Contain data, relations, and metadata (vocabularies)
+  \item Distinguished \emph{node filling in} and \emph{processing} graph triples, \emph{e.g.}, withing SPARQL queries with UPDATEs
   \item Allow postpone the formal definition of a schema
-  \item Three types of graph schemata: \emph{semantic} (aimed at generalization), \emph{validating} (e.g. semantics, completeness w.r.t. a set of relations), and \emph{emergent} (infer a set of generalized structures and re-represent the data).
+  \item Three types of graph schemata: \emph{semantic} (aimed at generalization), \emph{validating} (\emph{e.g.} semantics, \emph{completeness} w.r.t. sets of relations), and \emph{emergent} (infer a set of generalized structures and re-represent the KB).
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{Linked Open Data}
+  \frametitle{Linked Open Data (LOD) star evaluation}
+  \begin{itemize}
+  \item \textbf{1*} data is \textbf{openly available} in any format.
+  \item \textbf{2*} data is available in a structure format, such as Microsoft Excel file format (.xls).
+  \item \textbf{3*} data is available in a non-proprietary structured format, such as Comma-separated values (.csv).
+  \item \textbf{4*} data follows W3C standards, like using RDF and employing URIs.
+  \item[5*] \textbf{5*} all of the other, plus links to other Linked Open Data sources.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Linked Open Data (LOD) star evaluation}
+  \centering
+  \includegraphics[width=\linewidth]{5-star-lod.png}
 \end{frame}
 
 \begin{frame}
@@ -161,8 +173,8 @@ IWCI--2021, Baikalsk, Russia
   \begin{itemize}
   \item Design a web-based GIS system, representing data from SPARQL endpoints;
   \item Convert the existing data into RDF adhering LOD;
-
   \item Implement natural language query interface using GeoBase (\copyright~Intel~1988), which is converted into a SPARQL query;
+  \item Implement various analytical functionality for domain problem solving
   \item Bidirectional versioned data transfer between user GIS (QGIS, OSM Mapnik) and the SW storage. % The reason of the usage of OSM Mapmik is the various already implemented data processing service, e.g., GPS traces as raw material for modeling the map.
   \end{itemize}
 \end{frame}
@@ -207,7 +219,7 @@ IWCI--2021, Baikalsk, Russia
   % usage examples
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Related Works: GeoLink Knowledge graph}
   GeolLinkk KG \cite{geolink}
   \begin{itemize}
@@ -262,7 +274,6 @@ IWCI--2021, Baikalsk, Russia
   \item Metadata inference from the data source properties
   \item Test application is to integrate public services data in Mazowieckie Voivodeship of Poland, queries are realized by a limited set of keywords
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}
@@ -296,380 +307,7 @@ IWCI--2021, Baikalsk, Russia
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{The aim of the research and development}
 
-  The \emph{object} of the research is genetic data processing. We would like to involve biologists in it. The \emph{subject} is the amplicon data processing with MiSeq SOP\footnote{Standard Operational Procedure} (a technique) and comprehensive representation.
-
-  The primary \textbf{aim} of the research is to construct infrastructure which comprises
-  \begin{itemize}
-  \item Big Data database for sequence storage;
-  \item metadata storage and adapters;
-  \item visual construction of a processing model;
-  \item cloud genetic data processing unit;
-  \item metadata inference unit;
-  \item result and intermediate data visual representation;
-  \item data integration unit based on Semantic Web and Linked Open Data principles.
-  \end{itemize}
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{The process of \emph{amplicon} data analysis (MiSeq SOP)}
-  \begin{enumerate}
-  \item Reconstruct \emph{cotigs} (contiguous gene parts) from ``left'' and ``right'' \emph{readings}.
-  \item Trim \textbf{bar-code} and other \emph{primers}.
-  \item Filter sequences according to formal criteria (ambiguity, average length, maximal length of homopolymer).
-  \item Classify \emph{unique} sequences and count their appearance in groups (samples).
-  \item Alignment with reference sequences from SILVA database.
-  \item Filter non-hanging sequences.
-  \item Filter chimeras, fund unique sequences again.
-  \item Classify sequences with respect to existing taxa hierarchy. Get \textbf{OTU}s.
-  \end{enumerate}
-
-  After these stages around 1000 OTU\footnote{Operation Taxonomic Unit} has been obtained.
-
-\end{frame}
-
-
-
-\begin{frame}[fragile]
-  \frametitle{Alignment (an example)}
-{\footnotesize{}\ttfamily\begin{verbatim}
-align.seqs(fasta=HXH779K01.shhh.trim.good.unique.fasta,
-           reference=silva.bacteria.fasta)
-
-HXH779K01.shhh.trim.good.unique.align
-HXH779K01.shhh.trim.good.unique.align.report
-HXH779K01.shhh.trim.good.unique.flip.accnos
-----------------------------------------------------------
-summary.seqs(fasta=HXH779K01.shhh.trim.good.unique.align,
-      count=HXH779K01.shhh.trim.good.count_table)
-
-            Start   End     NBases  Ambigs  Polymer  NumSeqs
-Minimum:    6237    22529   5       0       1        1
-2.5%-tile:  6428    22577   409     0       4        835
-25%-tile:   6428    25292   420     0       4        8349
-Median:     6428    25292   423     0       5        16697
-75%-tile:   6428    25292   442     0       5        25045
-97.5%-tile: 6430    25293   446     0       6        32558
-Maximum:    43107   43116   476     0       9        33392
-Mean:       6435    25061   429     0       4
-----------------------------------------------------------
-# of unique seqs: 26744
-total # of seqs:  33392
-
-It took 21 secs to summarize 33392 sequences.
-\end{verbatim}}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{OTU classification analysis (an example)}
-{\tiny\ttfamily\begin{verbatim}
-
-classify.otu(list=HXH779K01.shhh.trim.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list,
- count=HXH779K01.shhh.trim.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table,
- taxonomy=HXH779K01.shhh.trim.good.unique.good.filter.unique.precluster.pick.rdp.wang.pick.taxonomy,
- label=0.03)
-
-
-OTU     Size    Taxonomy
-Otu001  2883    Bacteria(100);Bacteria_unclassified(100);Bacteria_unclassified(100);
-                Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);
-Otu003  1038    Bacteria(100);"Actinobacteria"(100);Actinobacteria(100);Actinomycetales(100);
-                Actinomycetales_unclassified(100);Actinomycetales_unclassified(100);
-Otu005  660     Bacteria(100);"Actinobacteria"(100);Actinobacteria(100);Acidimicrobiales(100);
-                Acidimicrobiaceae(99);Ilumatobacter(99);
-Otu007  497     Bacteria(100);"Verrucomicrobia"(100);Subdivision3(100);Subdivision3_..._sedis(100);
-                Subdivision3_..._unclassified(100);Subdivision3_genera_incertae_sedis_unclassified(100);
-Otu008  484     Bacteria(100);"Bacteroidetes"(100);Flavobacteria(100);"Flavobacteriales"(100);
-                Flavobacteriaceae(100);Flavobacterium(100);
-\end{verbatim}}
-  \begin{center}
-  \includegraphics[width=0.4\linewidth]{illumatobacter.jpg} ${}$
-  \includegraphics[width=0.3\linewidth]{flavobacter.jpg}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Phylogenetic OTU investigations}
-\centering
-  \includegraphics[width=0.7\linewidth]{phylotree-proc.png}
-% TODO: uncomment the prev line
-\end{frame}
-
-\begin{frame}
-  \frametitle{A ``taxonomy'' of groups}
-The taxonomy is build using unique sequences as a comparison basis. \\[2em]
-
-\begingroup
-\includegraphics[width=0.5\linewidth]{probe-tree.pdf}\hfil
-\includegraphics[width=0.45\linewidth]{baikal-probes.pdf}
-\endgroup
-\end{frame}
-
-\begin{frame}
-  \frametitle{Alpha-diversity}
-\centering
-  \includegraphics[width=1\linewidth]{heatmap-OTU-Group-tax.pdf}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Beta-diversity}
-  \includegraphics[width=1\linewidth]{nmds.pdf}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Dataflow representation of NGS analysis of amplicons}
-  \begin{columns}
-    \begin{column}{0.6\textwidth}
-      \begin{raggedright}
-        \includegraphics[width=1\linewidth]{Dataflow-color-en.png}
-      \end{raggedright}
-    \end{column}
-    \begin{column}{0.4\textwidth}\footnotesize
-      \begin{tabular}{ll}
-        Term & Description \\
-        \hline
-        NGS & New Generation\\ & Sequencing\\
-        Amplicon & A DNA or RNA part \\
-                 & copied many times \\
-        Mothur & A software toolset for\\ & NGS research \\
-        Rapidminer & A visual tool for \\
-             & data mining modeling\\
-             &  and execution
-      \end{tabular}
-      ${}$\\[1em]
-      Green blocks are Mothur modules. Others are Rapidminer Studio modules.
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Rapidminer module}
-\begin{minted}[fontsize=\tiny]{cpp}
-. . . vector<string> AlignCommand::setParameters(){ // PART OF MODULE SOURCE
-try {
-  CommandParameter ptemplate("reference", "InputTypes", "", "", "none", "none", "none","",false,true,true); parameters.push_back(ptemplate);
-  CommandParameter pcandidate("fasta", "InputTypes", "", "", "none", "none", "none","fasta-alignreport-accnos",false,true,true); parameters.push_back(pcandidate);
-  CommandParameter psearch("search", "Multiple", "kmer-blast-suffix", "kmer", "", "", "","",false,false,true); parameters.push_back(psearch);
-  CommandParameter pksize("ksize", "Number", "", "8", "", "", "","",false,false); parameters.push_back(pksize);
-  CommandParameter pmatch("match", "Number", "", "1.0", "", "", "","",false,false); parameters.push_back(pmatch);
-// . . . . . . .
-\end{minted}
-  \begin{columns}
-    \begin{column}{0.6\linewidth}
-\begin{minted}[fontsize=\tiny]{java}
-package com.rapidminer.ngs.operator; // GENERATED JAVA MODULE
-// imports
-
-class MothurChimeraCcodeOperator extends MothurGeneratedOperator {
-  private InputPort fastaInPort = getInputPorts().createPort("fasta");
-  private InputPort referenceInPort = getInputPorts().createPort("reference");
-  private OutputPort chimeraOutPort = getOutputPorts().createPort("chimera");
-  private OutputPort mapinfoOutPort = getOutputPorts().createPort("mapinfo");
-  private OutputPort accnosOutPort = getOutputPorts().createPort("accnos");
-
-  public MothurChimeraCcodeOperator (OperatorDescription description) {
-    super(description);
-  }
-  @Override
-  public void doWork() throws OperatorException {
-    super();
-    // . . . . . .
-  }
-  @Override
-  public String getOutputPattern(String type) {
-    if (type=="chimera") return
- "[filename],[tag],ccode.chimeras-[filename],ccode.chimeras";
-    if (type=="mapinfo") return "[filename],mapinfo";
-    if (type=="accnos") return
- "[filename],[tag],ccode.accnos-[filename],ccode.accnos";
-    return super.getOutputPattern(type);
-  }
-}
-\end{minted}
-    \end{column}
-    \begin{column}{0.4\linewidth}
-\begin{minted}[fontsize=\tiny]{turtle}
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-ngsp:spec a ngsp:Specification ;
-    ngsp:module mothur:NoCommand,
-        mothur:align-check,
-        mothur:align-seqs,
-# . . . . .
-mothur:align-check a ngsp:Module ;
-    ngsp:outputPattern [ a cnt:Chars ;
-            ngsp:parameterName "type" ;
-            ngsp:pattern [ ngsp:patternString
-                    "[filename],align.check" ;
-                    dc:identifier "aligncheck" ] ;
-            cnt:chars # . . . .
-# . . . . .
-mothur:align-check-idir-parameter a ngsp:Parameter ;
-    ngsp:important false ;
-    ngsp:multipleSelectionAllowed false ;
-    ngsp:optionsDefault "" ;
-    ngsp:required false ;
-    ngsp:type mothur:String ;
-    dc:title "inputdir" .
-
-mothur:align-check-map-parameter a ngsp:Parameter ;
-    ngsp:important true ;
-    ngsp:multipleSelectionAllowed false ;
-    ngsp:optionsDefault "" ;
-    ngsp:required true ;
-    ngsp:type mothur:InputTypes ;
-    dc:title "map" .
-# . . . . .
-\end{minted}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{Procedural data (Mothur tooling of Galaxy)}
-  \begin{columns}[T]
-    \begin{column}{0.5\linewidth}
-\begin{minted}[fontsize=\tiny]{xml+cheetah}
-<tool profile="16.07" id="mothur_make_contigs"
-  name="Make.contigs" version="@WRAPPER_VERSION@.0">
-  <description>Aligns paired ...</description>
-  <!-- . . . . -->
-  <command><![CDATA[ @SHELL_OPTIONS@
-## Symlinks creation or On the fly ...
-#if input_type.type == 'list_collection'
-  #for pair in input_type.list_paired_collection:
-    ln -s {pair.forward} `basename {pair.forward}` &&
-    ln -s {pair.reverse} `basename {pair.reverse}` &&
-    echo -e "{pair.name}\t`basename {pair.forward}`\t
-    `basename {pair.reverse}`" >> combo_fastq.dat &&
-  #end for ## . . . . . .
-echo 'make.contigs(
-  #if input_type.type == 'list_collection':
-    file=combo_fastq.dat,
-  #else:
-    ffastq=ffastq.dat,
-    rfastq=rfastq.dat,
-  #end if  ## . . . . . . .
-  gapextend=gapextend,
-  rename=rename
-  processors='{GALAXY_SLOTS:-8}'
-)' | sed 's/ //g' | mothur | tee mothur.out.log
-  ]]></command>
-  <inputs>
-    <conditional name="input_type">
-      <param name="type" type="select" label="Select ...">
-        <option value="regular" selected="true">Two ...</option>
-        <option value="simple_collection">One pair ...</option>
-        <option value="list_collection">Multiple ....</option>
-      </param>
-      <when value="regular">
-        <param name="forward_fastq" type="data" />
-        <param name="reverse_fastq" type="data" />
-      </when>
-    </conditional>
-    <param name="align" type="select" label="...." help="">
-      <option value="needleman" selected="true">needleman ...</option>
-      <option value="gotoh">gotoh</option>
-      <option value="kmer">kmer</option>
-    </param>
-  </inputs>
-</tool>
-\end{minted}
-    \end{column}
-    \begin{column}{0.5\linewidth}
-\begin{minted}[fontsize=\tiny]{turtle}
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-
-[] a gal:Suite ;
- ngsp:module [ a gal:Module,
-     ngsp:Module ;
-   gal:command " ## . . . .  ";
-   gal:exit_code [ gal:level "fatal" ;
-     gal:range "1:" ] ;
-       gal:inputs [ gal:checked "false" ;
-         gal:conditional [ gal:param [ gal:help "" ;
-           gal:option [ gal:value "yes" ;
-              dc:description "yes" ],
-                [ gal:value "no" ;
-                  dc:description "no" ] ;
-                dc:description "Trim with an oligos file?" ;
-                dc:title "add" ;
-              rdfs:range "select" ] ;
-           gal:when [ gal:value "no" ],
-           [ gal:param [ gal:min "0" ;
-             gal:value "0" ;
-             dc:description "pdiffs - number of differences to allow in the primer (default 0)" ;
-             dc:title "pdiffs" ;
-             rdfs:range "integer" ],
-             [ gal:min "0" ;
-               gal:value "0" ;
-               dc:description "bdiffs - number of differences to allow in the barcode (default 0)" ;
-               dc:title "bdiffs" ;
-               rdfs:range "integer" ],
-             [ gal:min "0" ;
-               gal:value "0" ;
-               dc:description "tdiffs - total number of differences to allow in primer and barcode (default 0)" ;
-             dc:title "tdiffs" ;
-             rdfs:range "integer" ] ] ] ]
-   dc:identifier "mothur_make_contigs" ;
-   dc:title "Make.contigs",
-            "make.contigs" ;
-   schema:sku 1 ''
-
-
-
-\end{minted}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{The infrastructure}
-  \centering
-  \includegraphics[width=0.8\linewidth]{architecture-mda-lod-ext-galaxy.pdf}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Semantic Web technologies in representation of models
-    during transformation}
-  \begin{itemize}
-  \item Assimilates experience of domain basic researches trending to standardization;
-  \item Regular set of triples denote a graph (T-Box, A-Box);
-  \item Standard vocabularies are formally described (\verb|rdfs:domain|, \verb|rdfs:range|);
-  \item Supported with most programming systems (libraries, inference engines, SPARQL);
-  \item RDF has a way of global element identification, \emph{i.e.} we can refer the same object from different software systems;
-  \item SWI-Prolog supports direct queries to a graph, as well as interpreting some predicates (\verb|rdfs:label|, \verb|dc:title|), wraps sparse RDF structure into a predicate arguments; ontological server ClioPatria;
-  \item There is simple way of data security implementation (\verb|rdfs:seeAlso|);
-  \item By means of Semantic Web \& LOD we are able to organize data transfer between heterogeneous information systems.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Used ontologies}
-
-  Standardized ontologies
-
-  \begin{itemize}
-  \item Friend-of-a-friend (\textbf{foaf}) for agent information: individuals, legal entities, program agents.
-  \item Provenance (\textbf{prov}) for making references between documents.
-  \item Dublin Core (\textbf{dc}) for published resource metadata mark up.
-  \item DBPedia resource (\textbf{dbr}) to refer external classes and instance objects.
-  \item Schema.org (\textbf{schema}) for Google, Yandex, Yahoo, \emph{etc}. searchable objects, structural elements.
-  \item The Bibliographic Ontology (\textbf{bibo}) used for literature reference mark up.
-  \item Open annotation (\texttt{oa}) as an ``bookmark'' ontology.
-  \end{itemize}
-
-  Non-standard ontologies
-
-  \begin{itemize}
-  \item Ontology \texttt{nssp} for Mothur source code processing results.
-  \item Ontology \texttt{uml} for XMI representation.
-  \end{itemize}
-\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{PSM: Scenario of a Class synthesis}
@@ -872,51 +510,42 @@ renderitem(Item, String):-
 \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Architecture of transformation modules}
-  \centering
-  \includegraphics[width=0.9\linewidth]{architect_tree_pres-en-wo-OCL.pdf}
+\begin{frame}[fragile]
+  \frametitle{Semantic Web technologies in representation of models
+    during transformation}
+  \begin{itemize}
+  \item Assimilates experience of domain basic researches trending to standardization;
+  \item Regular set of triples denote a graph (T-Box, A-Box);
+  \item Standard vocabularies are formally described (\verb|rdfs:domain|, \verb|rdfs:range|);
+  \item Supported with most programming systems (libraries, inference engines, SPARQL);
+  \item RDF has a way of global element identification, \emph{i.e.} we can refer the same object from different software systems;
+  \item SWI-Prolog supports direct queries to a graph, as well as interpreting some predicates (\verb|rdfs:label|, \verb|dc:title|), wraps sparse RDF structure into a predicate arguments; ontological server ClioPatria;
+  \item There is simple way of data security implementation (\verb|rdfs:seeAlso|);
+  \item By means of Semantic Web \& LOD we are able to organize data transfer between heterogeneous information systems.
+  \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Access LOD data}
+\begin{frame}
+  \frametitle{Used ontologies}
 
-  \begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{minted}[fontsize=\scriptsize]{logtalk}
-:- category(sparql).
-:- public(query/2).
-query(Pattern,Parameters,Row):-
-    prepare(Pattern,Parameters,Query),
-    server(Host,Port,Path),
-    sparql_query(Query, Row,
-        [host(Host),port(Port),path(Path)]).
-:- protected(server/3).  % must be implemented
-                         % by a subclass.
-:- protected(prepare/3). % prepares a query
-% . . . . . . . . . .    %             string.
-:- end_category.
+  Standardized ontologies
 
-:- object(dbpedia, extends(sparql)).
-:- protected(server/3).
-server('dbpedia.org',80,'/sparql').
-:- public(entity_name/2).
-entity_name(Entity,Language,Name):-
-    query('select ?name where { '
-          ' %w rdfs:label ?name. '
-          'FILTER langMatches( lang(?label),'
-          ' "%w" )}', [Entity, Language],
-          row(Name)).
-:- end_object.
+  \begin{itemize}
+  \item Friend-of-a-friend (\textbf{foaf}) for agent information: individuals, legal entities, program agents.
+  \item Provenance (\textbf{prov}) for making references between documents.
+  \item Dublin Core (\textbf{dc}) for published resource metadata mark up.
+  \item DBPedia resource (\textbf{dbr}) to refer external classes and instance objects.
+  \item Schema.org (\textbf{schema}) for Google, Yandex, Yahoo, \emph{etc}. searchable objects, structural elements.
+  \item The Bibliographic Ontology (\textbf{bibo}) used for literature reference mark up.
+  \item Open annotation (\texttt{oa}) as an ``bookmark'' ontology.
+  \end{itemize}
 
-% ?- dbpedia::entity_name(dbr:'Passport', 'ru', Name).
-\end{minted}
-\end{column}
-\begin{column}{0.5\textwidth}
-  \flushright
-\includegraphics[width=0.8\linewidth]{simple-diag.pdf}
-\end{column}
-\end{columns}
+  Non-standard ontologies
+
+  \begin{itemize}
+  \item Ontology \texttt{nssp} for Mothur source code processing results.
+  \item Ontology \texttt{uml} for XMI representation.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -1011,206 +640,6 @@ typeof="schema:CreativeWork sioc:Post prov:Entity">
 \end{frame}
 
 \begin{frame}
-  \frametitle{Architecture}
-  \begin{adjustwidth}{-2.5em}{-2.5em}
-    \begin{center}
-      \includegraphics[width=0.5\linewidth]{architecture-mda-lod-ext-tot.pdf}
-    \end{center}
-  \end{adjustwidth}
-
-% \begin{itemize}
-% \item content and metadata repository with SPARQL (6) and full-text search (3); the engines for LOD processing (5) based on the logical inference;
-% \item service for analysis of the stored content (2) enriching the archive with semantic information describing the content;
-% \item tools for development of LOD applications and their user interfaces (1);
-% \item browser based authoring tools (4).
-% \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Generated list of title page preambles}
-    \begin{adjustwidth}{-2.5em}{-2.5em}
-    \begin{center}
-      \includegraphics[width=0.7\linewidth]{template-title-pages.jpg}
-    \end{center}
-  \end{adjustwidth}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Generated part of a study program}
-   \begin{adjustwidth}{-2.5em}{-2.5em}
-    \begin{center}
-      \includegraphics[width=0.7\linewidth]{template-courses.jpg}
-    \end{center}
-  \end{adjustwidth}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Imported time distribution for lecture, seminary, \ldots}
-   \begin{adjustwidth}{-2.5em}{-2.5em}
-    \begin{center}
-      \includegraphics[width=0.9\linewidth]{work-program-volume.jpg}
-    \end{center}
-  \end{adjustwidth}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Complete document}
-  \begin{adjustwidth}{-2.5em}{-2.5em}
-    \begin{center}
-      \begin{columns}
-        \begin{column}{0.5\linewidth}
-          \includegraphics[width=1\linewidth]{work-program-title.jpg}
-        \end{column}
-        \begin{column}{0.5\linewidth}
-          \includegraphics[width=1\linewidth]{work-program-agreement.jpg}
-        \end{column}
-    \end{columns}
-    \end{center}
-  \end{adjustwidth}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Resume on Document Representation}
-A tools (components) for digital archive implementation, which allows
-to device information systems and document processing services
-with the following features:
-\begin{itemize}
-\item load LOD marked up document, extract, store in a graph and index RDF data;
-\item retrieve RDF data as triples or as a result of full-text search query;
-\item combine existing LOD data and its content in new documents dynamically with browser based context inference machine;
-\item use server-site inference machine (Prolog) to process RDF data upon
-  request from browser's part of the system;
-  % \item organizes a platform for document semantic markup,
-\item convert created RDFa marked up HTML5 documents into Excel and Word formats.
-\end{itemize}
-
-  \textbf{Applications}
-  \begin{itemize}
-  \item Document authoring automation;
-  \item Context-depended editing;
-  % \item Export into office formats;
-  \item Self-organizing global document flows;
-  \item Documents as data sources for information systems.
-  \end{itemize}
-
-\end{frame}
-
-% \begin{frame}
-%   \frametitle{Conclusion}
-%   The following results have been obtained as for today:
-%   \begin{itemize}
-%   \item A technique for model representation has been developed and tested.
-%   \item A programming technique using object-oriented logical language Logtalk is devised.
-%   \item Prototypes of various transformation procedures are implemented.
-%   \item Transformation tools are tested in application areas and no significant technical problems were mentioned.
-%   \end{itemize}
-%   Further development directions are as follows:
-%   \begin{itemize}
-%   \item A technique for document automatic markup with vocabulary entities.
-%   \item A transformation implemenation techniques, minimizing usage of dynamic objects, targeting on macro properties of Logtalk.
-%   \item Form a toolset out of existing prototypes obeying nowadays software development requirements.
-%   \end{itemize}
-%   The source codes are available at \url{https://github.com/isu-enterprise/icc.xmitransform}, \url{https://github.com/eugeneai/icc.mothurpim}.
-% \end{frame}
-
-
-\begin{frame}
-  \frametitle{Microbiome study process}
-  \centering
-  \includegraphics[width=\linewidth]{microbiome-study2.png}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Model Driven Architecture and Linked Open Data}
-  \begin{center}
-    \includegraphics[width=0.9\linewidth]{mda-overview.pdf}
-  \end{center}
-\end{frame}
-
-
-
-\begin{frame}[fragile]
-  \frametitle{PSM of a Python Class as a specialization of Code Block}
-%\begin{multicols}{2}
-  \begin{columns}
-    \begin{column}{0.6\textwidth}
-      \flushleft
-\begin{minted}[fontsize=\scriptsize]{logtalk}
-:- object(class, specializes(code_block),
-   imports([named])). % Category of named entities
-:- public([classlist/1, methods/1, attributes/1]).
-% . . . . . . . . . . . . . .
-renderitem(Item, Result):-      % proceed with default
-    ^^renderitem(Item, Result). % rendering
-render(Result):-         % Source generator
-    ^^render(Name),      % implemented in a category
-    ( ::item(classlist(List)) ->
-     % . . . . . . . . . . .
-        [Name]) ),
-    ( ::item(attributes(Attributes))->
-     % . . . . . . . . . . .
-        [DefAttrList]),
-      Attributes::items(InstanceAttrs),
-      findall(S, ( % initialize attributes
-         % . . . . . . . . .
-         ), AttrAssigns),
-        root::unindent,
-        AttrList=[ConstructorDef|AttrAssigns];
-         % . . . . . . . . .
-        AttrList=[ConstructorDef, Pass] ),
-    ( ::item(methods(Methods))-> % If any ...
-      Methods::render(MethodList);
-      MethodList=[] ),
-    lists::append(AttrList,MethodList,StringList),
-    root::unindent, Result=[Signature|StringList].
-:- end_object.
-\end{minted}
-    \end{column}
-    \begin{column}{0.4\linewidth}
-      \includegraphics[width=1\linewidth]{code_block_class.pdf}
-    \end{column}
-  \end{columns}
-  % \end{multicols}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Logtalk Categories}
-  A category of named entities
-\begin{minted}[fontsize=\scriptsize]{logtalk}
-:- category(named).
-:- public([name/1, render/1]).
-:- protected([renderitem/2]).
-name(Name):- ::prepend(name(Name)).
-renderitem(name(Name), String):-!, atom_string(Name, String).
-render(String):-  % What is code generation from items
-    ::item(name(Name)), ::renderitem(name(Name), String).
-:-end_category.
-\end{minted}
-Category of named and typed entities
-\begin{minted}[fontsize=\scriptsize]{logtalk}
-:- category(namedtyped, extends(named)).
-:- public([type/1,render/2, separator_option/2,list_separator/1]).
-:- protected([renderitem/2]).
-type(Type):- ::append(type(Type)).
-renderitem(Item, String):- ^^renderitem(Item, String),!.
-renderitem(type(Type),String):-!, ::list_separator(Separator),
-    writef::swritef(String, '%w%w', [Separator, Type]).
-render(Middle, String):- ^^render(SName),
-    (   ::item(type(Type)) ->
-        ::renderitem(type(Type), SType),
-        string_concat(SName, Middle, _1),
-        string_concat(_1, SType, String) ;
-        SName = String  ).
-render(String):-  ::render("", String).
-list_separator(Separator):-
-    ::separator_option(Name, Default),!, % Global options
-    root::option(Name, Separator, Default).
-:- end_category.
-
-\end{minted}
-\end{frame}
-
-\begin{frame}
   \frametitle{Linked Open Data, LOD}
   \begin{enumerate}
   \item Information is published in Internet with open access license;
@@ -1237,89 +666,6 @@ list_separator(Separator):-
   The <<regular>> language allow us to use its libraries not directly related to MDA transformations.
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{RDF (TTL) representation and its query object}
-\begin{multicols}{2}
-\begin{minted}[fontsize=\tiny]{turtle}
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-ngsp:spec a ngsp:Specification ;
-    ngsp:module mothur:NoCommand,
-        mothur:align-check,
-        mothur:align-seqs,
-# . . . . .
-mothur:align-check a ngsp:Module ;
-    ngsp:outputPattern [ a cnt:Chars ;
-            ngsp:parameterName "type" ;
-            ngsp:pattern [ ngsp:patternString
-                    "[filename],align.check" ;
-                    dc:identifier "aligncheck" ] ;
-            cnt:chars # . . . .
-# . . . . .
-mothur:align-check-idir-parameter a ngsp:Parameter ;
-    ngsp:important false ;
-    ngsp:multipleSelectionAllowed false ;
-    ngsp:optionsDefault "" ;
-    ngsp:required false ;
-    ngsp:type mothur:String ;
-    dc:title "inputdir" .
-
-mothur:align-check-map-parameter a ngsp:Parameter ;
-    ngsp:important true ;
-    ngsp:multipleSelectionAllowed false ;
-    ngsp:optionsDefault "" ;
-    ngsp:required true ;
-    ngsp:type mothur:InputTypes ;
-    dc:title "map" .
-
-mothur:align-check-name-parameter a ngsp:Parameter ;
-    ngsp:chooseOnlyOneGroup "namecount" ;
-    ngsp:important false ;
-    ngsp:multipleSelectionAllowed false ;
-# . . . . .
-\end{minted}
-\begin{minted}[fontsize=\tiny]{logtalk}
-:- object(queryparam(_RDF,_Parameter),
-          extends(ngsquerybase)).
-
-  :- public(type/1).
-  type(Type) :-
-    ::attr(type, Type).
-  :- public(name/1).
-  name(Name) :- ::attr(dc:title, literal(Name)).
-  :- public(options/1).
-  options(Value):- ::attr(options, Value).
-  :- public(options_default/1).
-  options_default(Value):-
-    ::attr(optionsDefault, Value).
-  % . . . . . . . .
-  :- public(multiple_selection_allowed/0).
-  multiple_selection_allowed:-
-    ::bool_attr(multipleSelectionAllowed).
-  :- public(required/0).
-  required:-
-    ::bool_attr(required).
-  :- public(important/0).
-  important:-
-    ::bool_attr(important).
-  :- protected(attr/2).
-  attr(NS:Name, Value):-
-    ::ngs(RDF),
-    ::second(Parameter),
-    rdf_db::rdf_global_object(Value, V),
-    RDF::rdf(Parameter, NS:Name, V).
-  attr(Name, Value):-
-    \+ Name=_:_,!,
-    ::ngs(RDF),
-    ::second(Parameter),
-    rdf_db::rdf_global_id(Value, V),
-    RDF::rdf(Parameter, ngsp:Name, V).
-  % . . . . .
-:- end_object.
-
-\end{minted}
-\end{multicols}
-\end{frame}
 
 \begin{thebibliography}{99}
 \bibitem{b1}
