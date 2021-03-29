@@ -93,13 +93,13 @@
 % --------------------------
 
 % \def\cite#1{(#1)}
-
+\def\doitext{DOI:}
 \begin{document}
 
 \setbeamertemplate{background canvas}[vertical shading][bottom=white,top=white]
 \setbeamercolor{background canvas}{bg=white}
 
-\title{Integration of Geological Data as a Knowledge Graph}
+\title{Integration of Geological Data\\ as a Knowledge Graph}
 \author[E.~Cherkashin, O.~Lunina, T.~Cherkashina, V.~Pellinen, A.~Gladkov]{\bfseries%
   \underline{Evgeny Cherkashin}, Oksana Lunina,  Tatiana Cherkashina, Vadim Pellinen, Anton Gladkov}
 \institute{\normalsize Matrosov Institute for System Dynamics and Control Theory, \\ SB RAS, Irkutsk, Russia\\
@@ -115,14 +115,14 @@ IWCI--2021, Baikalsk, Russia
 
 \begin{frame}
   \frametitle{Problem statement}
-  Integration the collected geological data so they can be
+  Integration the collected geological data, so they can be
   \begin{itemize}
   \item easily accessed
   \item of a standardized representation
   \item integrated with the data sources of the similar structure (access way and data representation paradigm) % e.g. DBPedia.org LOD
   \item thus, reuse the existing data sources for the domain modeling
   \item processed within Big Data paradigm
-  \item represented as cartographical work (map) dynamically with/without need of GIS software installation
+  \item represented as cartographic work (map) dynamically with/without need of GIS software installation
   \end{itemize}
   The requested requirements are fulfilled with the present Semantic Web technologies.
 \end{frame}
@@ -131,7 +131,7 @@ IWCI--2021, Baikalsk, Russia
   \frametitle{Semantic web technologies \& Knowledge graphs}
   Semantic Web (WEB 3.0) is characterized with
   \begin{itemize}
-  \item Technological basis, oriented to the web % User applications are always comprises of interconnected distributed web-services.
+  \item Technological basis, oriented to the web % User applications are always comprises interconnected distributed web-services.
   \item Standardized data formats, storage, and processing
   \item Open principles of data publishing
   % \item Knowledge Graph (KG) construction techniques
@@ -150,7 +150,7 @@ For the Knowledge Graphs (KG), the following is of interest.
   \item Contain data, relations, and metadata (vocabularies)
   \item Distinguished \textbf{node filling in} and \textbf{processing} graph triples, \emph{e.g.}, withing SPARQL queries with UPDATEs
   \item Allow \textbf{postpone} the formal definition of a schema
-  \item Three types of graph schemata: \textbf{semantic} (aimed at generalization), \textbf{validating} (\textbf{e.g.} semantics, \textbf{completeness} w.r.t. sets of relations), and \textbf{emergent} (infer a set of generalized structures and re-represent the KG).
+  \item Three types of graph schemata: \textbf{semantic} (aimed at generalization), \textbf{validating} (\textbf{e.g.} semantics, \textbf{completeness} w.r.t. sets of relations), and \textbf{emergent} (infer a set of generalized structures and \textbf{reconstruct} the KG).
   \end{itemize}
 \end{frame}
 
@@ -199,8 +199,15 @@ For the Knowledge Graphs (KG), the following is of interest.
 % \end{frame}
 
 \begin{frame}
-  \frametitle{Related works: \textbf{LinkedGeoData} project}
-  The project \cite{lgd} was to represent OpenSteetMap (OSM) data as a KG,
+  \centering
+  \Large Related works and techniques review
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{\textbf{LinkedGeoData} project}
+  The project\footnote{Claus Stadler, Jens Lehmann, Konrad Höffner, Sören Auer. LinkedGeoData:
+A core for a web of spatial open data. Semantic Web 3 (2012) 333–354. \doi{10.3233/SW-2011-0052}} was to represent OpenSteetMap (OSM) data as a KG,
   \begin{itemize}
   \item Resembles the DBPedia project formalizing Wikipedia data but over the OSM database
   \item Converts SM data into RDF adhering LOD
@@ -215,7 +222,7 @@ For the Knowledge Graphs (KG), the following is of interest.
 
 
 \begin{frame}
-  \frametitle{Related works: LinkedGeoData project}
+  \frametitle{LinkedGeoData project}
   % Figures of Ontology and
   % usage examples
   \centering
@@ -223,7 +230,7 @@ For the Knowledge Graphs (KG), the following is of interest.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Related works: LinkedGeoData project}
+  \frametitle{LinkedGeoData project}
   % Figures of Ontology and
   % usage examples
   \centering
@@ -232,8 +239,8 @@ For the Knowledge Graphs (KG), the following is of interest.
 
 
 \begin{frame}[fragile]
-  \frametitle{Related Works: GeoLink Knowledge graph}
-  GeolLink KG \cite{geolink}
+  \frametitle{\textbf{GeoLink} knowledge graph}
+  GeolLink KG\footnote{Michelle Cheatham, Adila Krisnadhi, Reihaneh Amini, Pascal Hitzler, \emph{et al} (2018) The GeoLink knowledge graph, Big Earth Data, 2:2, 131-143, \doi{10.1080/20964471.2018.1469291}}
   \begin{itemize}
   \item Includes diverse information as port calls made by oceanographic cruises, physical sample metadata, research project funding and staffing, and authorship of technical reports
   \item Implements LOD (4 of 5 stars) and federated SPARQL integration
@@ -244,7 +251,7 @@ For the Knowledge Graphs (KG), the following is of interest.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Related Works: GeoLink Knowledge graph}
+  \frametitle{GeoLink knowledge graph}
   % Example image from \cite{geolink}
   \begin{center}
   \includegraphics[width=\linewidth]{geolink-onto.png}
@@ -256,7 +263,7 @@ For the Knowledge Graphs (KG), the following is of interest.
 % The reference \cite{iwaniak} contains a good review of KG GIS activities related to spacial semantic data representation,  importing, crossreferencing and entity relation techniques and tools development.
 
 \begin{frame}
-  \frametitle{Related Works: Integrating LOD into GIS}
+  \frametitle{Integrating LOD into GIS}
   The project\footnote{Tarek Abid, Hafed Zarzour. Integrating Linked Open Data in Geographical
 Information System. International Conference on Information Technology for Organization Development. 2014. } deals with developing a web GIS automatically publishing DBPedia data.
   \begin{itemize}
@@ -272,21 +279,21 @@ Information System. International Conference on Information Technology for Organ
 \end{frame}
 
 \begin{frame}
-  \frametitle{Related Works: Integrating LOD into GIS}
+  \frametitle{Integrating LOD into GIS}
   % Figure of GIS and SPARQL query
   \centering
-  \includegraphics[width=\linewidth]{integrating-lod-gis-arch.png}
+  \includegraphics[width=0.65\linewidth]{integrating-lod-gis-arch.png}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Related Works: Integrating LOD into GIS}
+  \frametitle{Integrating LOD into GIS}
   % Figure of GIS and SPARQL query
   \centering
-  \includegraphics[width=\linewidth]{integrating-lod-gis-query.png}
+  \includegraphics[width=0.8\linewidth]{integrating-lod-gis-query.png}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Related Works: Publishing Geodata LOD in context dependent pages}
+  \frametitle{Publishing Geodata LOD in context dependent pages}
   The project\footnote{Adam Iwaniak, Marta Leszczuk, Marek Strzelecki, Francis Harvey, Iwona Kaczmarek. A Novel Approach for Publishing Linked Open Geodata from National Registries with the Use of Semantically Annotated Context Dependent Web Pages. International Journal of Geo-Information. 6, 252, 2017. \doi{10.3390/ijgi6080252}} goal is to convert existing GIS data into explicit knowledge, thus, forming a Spatial Data Infrastructure (SDI).
   \begin{itemize}
   \item Integrate existing geoportal data into a KB, including dynamic data
@@ -317,6 +324,14 @@ with GIS}
 \end{frame}
 
 \begin{frame}
+  \frametitle{Enriching and improving the quality of linked data...}
+
+  \begin{center}
+   \includegraphics[width=0.8\linewidth]{joining-objs.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
   \frametitle{Publishing Geodata LOD in context dependent pages}
   % Figure of GIS and SPARQL query
   \centering
@@ -324,39 +339,48 @@ with GIS}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Related Works: Publishing Geodata LOD in context dependent pages}
-  % figure 1 of Concept of system architecture
-  % figure 2 HTML example
+% \begin{frame}
+%   \frametitle{Related Works: Publishing Geodata LOD in context dependent pages}
+%   % figure 1 of Concept of system architecture
+%   % figure 2 HTML example
+% \end{frame}
+
+\begin{frame}\centering
+  \Large Existing geological GIS resources
 \end{frame}
 
+
 \begin{frame}
-  \frametitle{Existing resources}
+  \frametitle{Active faults of Japan islands}
   % Figure of GIS and SPARQL query
   \centering
   \includegraphics[width=\linewidth]{japan.png}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Existing resources}
+  \frametitle{Active fault of Italian Peninsula}
   % Figure of GIS and SPARQL query
   \centering
   \includegraphics[width=\linewidth]{italy-1.png}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Existing resources}
+  \frametitle{Active fault of Italian Peninsula}
   % Figure of GIS and SPARQL query
   \centering
   \includegraphics[width=\linewidth]{italy-2.png}
 \end{frame}
 
+\begin{frame}\centering
+  \Large Resources to be presented
+\end{frame}
+
 \begin{frame}
-  \frametitle{Resources to be presented: Active faults of the South of
-    East Siberia}
+  \frametitle{Active faults of the South of East Siberia}
   % Screenshot of the system
   \centering
-   \includegraphics[width=0.9\linewidth]{activetectonics.png}
+  \includegraphics[width=0.9\linewidth]{activetectonics.png}
+  \url{http://http://activetectonics.ru/}
 \end{frame}
 
 \begin{frame}
@@ -367,13 +391,107 @@ with GIS}
   \begin{itemize}
   \item Faults are the objects having linear projection on the surface, and a depth and a slope in the lithosphere
   \item Various geological events are also subjects of presentation
-  \item Any object accompanied with various valued characteristics having also characteristics, \emph{e.g.}, unit name, measurement precision and related publications
-  \item Images, tables, expedition trails are a also used as auxiliary materials.
+  \item Any object accompanied by various valued characteristics having also characteristics, \emph{e.g.}, unit name, measurement precision and related publications
+  \item Images, tables, expedition trails are also used as auxiliary materials.
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Database Structure}
+  \begin{columns}\tiny
+    \begin{column}{0.5\linewidth}
+\begin{verbatim}
+!table
+!version 300
+!charset WindowsCyrillic
+
+Definition Table
+  Type NATIVE Charset "WindowsCyrillic"
+  Fields 72
+    ID Char (15) Index 1 ;
+    Name Char (40) Index 2 ;
+    Location Char (250) Index 3 ;
+    Strike Char (10) Index 4 ;
+    Strike_Q Char (2) ;
+    Dip_azimuth Char (10) Index 5 ;
+    Dip_azimuth_Q Char (2) ;
+    Dip_angle Char (10) Index 6 ;
+    Dip_angle_Q Char (2) ;
+    Length_km Char (10) Index 7 ;
+    Length_Q Char (2) ;
+    Depth_km Char (10) Index 8 ;
+    Depth_Q Char (2) ;
+    Width_damage_zone_km Char (10) Index 9 ;
+    Width_damage_zone_Q Char (2) ;
+    Slip_sense Char (30) Index 10 ;
+    Slip_sense_Q Char (2) ;
+    Slip_sense_Index Decimal (2, 0) ;
+    Total_Cenozoic_lateral_slip_m Char (20) ;
+    Total_Cenozoic_lateral_slip_Q Char (2) ;
+    Total_Cenozoic_vertical_slip_m Char (20) ;
+    Total_Cenozoic_vertical_slip_Q Char (2) ;
+    Reliability_class Decimal (1, 0) Index 11 ;
+    Geomorphological_features Char (250) ;
+    Geomorphological_grade Integer Index 12 ;
+    Geophysical_features Char (254) ;
+    Geophysical_grade Integer Index 13 ;
+    Engineering_geological_features Char (254) ;
+    Engineering_geological_grade Integer Index 14 ;
+    Gydrogeological_features Char (200) ;
+    Gydrogeological_grade Integer Index 15 ;
+    Meteorological_features Char (50) ;
+    Meteorological_grade Integer Index 16 ;
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+\begin{verbatim}
+
+    Structural_geological_features Char (254) ;
+    Structural_geological_grade Integer Index 17 ;
+    Paleoseismological_features Char (254) ;
+    Paleoseismological_grade Integer Index 18 ;
+    Seismological_features Char (100) ;
+    Seismological_grade Integer Index 19 ;
+    Slip_rate_features Char (10) ;
+    Slip_rate_grade Integer Index 20 ;
+    Total_activity_grade Decimal (4, 0) Index 21 ;
+    Activity_degree Char (25) Index 22 ;
+    Last_activation_age Char (30) Index 23 ;
+    Last_activation_age_index Decimal (1, 0) Index 24 ;
+    Last_historical_earthquake Char (150) Index 25 ;
+    Last_historical_earthquake_Q Char (2) ;
+    Absolute_deformation_age Char (254) ;
+    Absolute_deformation_age_Q Char (2) ;
+    Vertical_max_slip_per_event_m Float ;
+    Vertical_max_slip_per_event_Q Char (2) ;
+    Lateral_max_slip_per_event_m Float ;
+    Lateral_max_slip_per_event_Q Char (2) ;
+    Total_max_slip_per_event_m Float ;
+    Total_max_slip_per_event_Q Char (2) ;
+    Slip_rate_mm_year Char (30) ;
+    Slip_rate_Q Char (2) ;
+    Averaged_slip_rate_mm_year Float ;
+    Averaged_slip_rate_Q Char (2) ;
+    Recurrence_interval Char (10) Index 26 ;
+    Recurrence_interval_Q Char (2) ;
+    Potential_Ms_max Float ;
+    Potential_Ms_max_Q Char (2) ;
+    Potential_Mw_max Float ;
+    Potential_Mw_max_Q Char (2) ;
+    Elapsed_time_years Char (10) ;
+    Elapsed_time_Q Char (2) ;
+    Associated_CSS Char (25) ;
+    Associated_IGGSS Char (50) ;
+    Seismic_activity_of_fault Char (3) ;
+    Compiler Char (50) ;
+    Date Char (10) ;
+\end{verbatim}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}
-  \frametitle{Resources to be presented:  the Olkhon Island}
+  \frametitle{The pollutions of Olkhon Island}
    % Generate a map from the existing data
   \centering
    \includegraphics[width=\linewidth]{olkhon-gis.png}
@@ -386,18 +504,22 @@ with GIS}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Conclusion}
-  [[[]]]The following results have been obtained as for today:
-  \begin{itemize}
-  \item Biologists' activities are mastered, investigated and regular patterns are described.
-  \item A technique for interpretation of Mothur interfaces has been developed, implemented, refined and extended.
-  \item Transformation tools are tested in application areas and no significant technical problems were detected.
-  \item A technique of document authoring is being developed and adapted to the domain.
-  \item Integration with Galaxy project is the primary aim of the future development.
-  \end{itemize}
-  The source codes are available at \url{https://github.com/isu-enterprise/icc.xmitransform}, \url{https://github.com/eugeneai/icc.mothurpim}.
+  \frametitle{Leaflet}
+  \centering
+  \includegraphics[width=0.8\linewidth]{leaflet.png}
+\end{frame}
 
-  This research is supported by Irkutsk scientific center of SB RAS, project No 4.2;
+\begin{frame}
+  \frametitle{Conclusion}
+  The following results have been obtained as for today:
+  \begin{itemize}
+  \item A short review of similar\& basic projects has been carried out
+  \item An experience has been obtained in usage of standardized ontologies and SW techniques
+  \item The project is relevant in sense of application of standards in data publishing
+  \item There are technologies allowing to implement such services, they're mostly web-oriented
+  \item Application of the reviewed technologies will extend the research possibilities
+  \end{itemize}
+  The results were obtained within the framework of the State Assignment of the Ministry of Education and Science of the Russian Federation for the project ``Methods and technologies of cloud-based service-oriented platform for collecting, storing and processing large volumes of multi-format interdisciplinary data and knowledge based upon the use of artificial intelligence, model-guided approach and machine learning''. Some results were obtained using the facilities of the Centre of collective usage ``Integrated information network of Irkutsk scientific educational complex''.
 \end{frame}
 
 \begin{frame}
@@ -411,20 +533,31 @@ with GIS}
       \url{https://raw.githubusercontent.com/eugeneai/paper-2021-iwci/main/talk-IWCI-2021-03-30.pdf}
     \end{column}
   \end{columns}
-\begin{thebibliography}{99}
-
-\bibitem{lunina}
-Oksana V. Lunina.  The digital map of the pliocene quaternary crustal faults in the southern east siberia and the adjacent northern Mongolia. Geodynamics \& Tectonophysics. 2016. 7(3):407-434. \doi{10.5800/GT-2016-7-3-0215}
-\bibitem{hogan}
-  Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia D’Amato \emph{et al}. Knowledge Graphs.
-  \url{https://arxiv.org/abs/2003.02320v5}
-\end{thebibliography}
+  \vspace{3em}
+  \begin{center}
+  \Large Thank You!
+\end{center}
 \end{frame}
 
+\maketitle
+
 \begin{frame}
-  \begin{center}
-  \Large Thanks for Your interest in our project!
-\end{center}
+  \frametitle{External links}\footnotesize
+  \begin{thebibliography}{99}
+\bibitem{hogan} Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia D’Amato \emph{et al}. Knowledge Graphs. \url{https://arxiv.org/abs/2003.02320v5}
+\bibitem{lgd} Claus Stadler, Jens Lehmann, Konrad Höffner, Sören Auer. LinkedGeoData: A core for a web of spatial open data. Semantic Web 3 (2012) 333–354. \doi{10.3233/SW-2011-0052}
+
+\bibitem{iwaniak1} Adam Iwaniak, Iwona Kaczmarek, Marek Strzelecki, Jaromar Lukowicz, Piotr Jankowski. Enriching and improving the quality of linked data with GIS. \doi{10.1515/geo-2016-0c020}
+
+\bibitem{iwaniak17} Adam Iwaniak, Marta Leszczuk, Marek Strzelecki, Francis Harvey, Iwona Kaczmarek. A Novel Approach for Publishing Linked Open Geodata from National Registries with the Use of Semantically Annotated Context Dependent Web Pages. International Journal of Geo-Information. 6, 252, 2017. \doi{10.3390/ijgi6080252}
+
+\bibitem{abid} Tarek Abid, Hafed Zarzour. Integrating Linked Open Data in Geographical
+Information System. International Conference on Information Technology for Organization Development. 2014.
+
+\bibitem{geolink} Michelle Cheatham, Adila Krisnadhi, Reihaneh Amini, Pascal Hitzler, \emph{et al} (2018) The GeoLink knowledge graph, Big Earth Data, 2:2, 131-143, \doi{10.1080/20964471.2018.1469291}
+
+\bibitem{lunina} Oksana V. Lunina.  The digital map of the pliocene quaternary crustal faults in the southern east siberia and the adjacent northern Mongolia. Geodynamics \& Tectonophysics. 2016. 7(3):407-434. \doi{10.5800/GT-2016-7-3-0215}
+\end{thebibliography}
 \end{frame}
 
 \begin{frame}
@@ -519,7 +652,7 @@ Oksana V. Lunina.  The digital map of the pliocene quaternary crustal faults in 
   \frametitle{Document authoring and storage}
   In most cases documents are created as a result of
   \begin{itemize}
-  \item creative activity of a person with a text processors (authoring);
+  \item creative activity of a person with text processors (authoring);
   \item printing a digital copy or a data record in a database;
   \item aggregation operation over database records (report).
   \end{itemize}
